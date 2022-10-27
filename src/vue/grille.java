@@ -18,8 +18,8 @@ grille = new char [15] [15];
 
 for (int i= 0; i< 15; i++) {	
 	for (int j= 0; j< 15; j++) {
-		while (taille !=0)
-			
+		grille [coordX] [coordY] = lettre;
+		while(taille< 5 )	
 		grille [coordX+1] [coordY] = lettre;
 		taille --;
 }
