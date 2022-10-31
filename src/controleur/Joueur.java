@@ -1,12 +1,13 @@
 package controleur;
 
-public class Joueur {
-	 private int destroyeur;
+import modele.destroyer;
+import vue.grille;
+import controleur.Nvlpartie;
 
-int Nbedestroyeur (int destroyeur) {
-	this.destroyeur = destroyeur;
-	return destroyeur;
-	
+public class Joueur {
+
+Joueur(String name) {
+
 }
 
 

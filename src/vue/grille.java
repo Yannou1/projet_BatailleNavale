@@ -23,76 +23,54 @@ for (int i= 1; i< 16; i++) {
 
 
 public void placement (int coordX, int coordY, String lettre, int taille, int sens) {
+	if (sens==1)
+	{
 	
+grille [coordX] [coordY] = lettre;		
+
+for (int longu =0; longu< taille-1; longu++) {
+	taille --;
+	coordYdepl ++;
+	placement (coordX,  coordY+1,  lettre,  taille,  sens);
+}
+}
+	if (sens==2)
+	{
 	
+grille [coordX] [coordY] = lettre;		
+
+for (int longu =0; longu< taille-1; longu++) {
+	taille --;
+	coordYdepl ++;
+	placement (coordX,  coordY-1,  lettre,  taille,  sens);
+}
+}
+	if (sens==3)
+	{
 	
-	if (grille [coordX] [coordY] == null ) {
-		if (sens==1)
-		{
-		
-	grille [coordX] [coordY] = lettre;		
+grille [coordX] [coordY] = lettre;		
 
-	for (int longu =0; longu< taille-1; longu++) {
-		taille --;
-		coordYdepl ++;
-		placement (coordX,  coordY+1,  lettre,  taille,  sens);
-	}
-	}
-		if (sens==2)
-		{
-		
-	grille [coordX] [coordY] = lettre;		
-
-	for (int longu =0; longu< taille-1; longu++) {
-		taille --;
-		coordYdepl ++;
-		placement (coordX,  coordY-1,  lettre,  taille,  sens);
-	}
-	}
-		if (sens==3)
-		{
-		
-	grille [coordX] [coordY] = lettre;		
-
-	for (int longu =0; longu< taille-1; longu++) {
-		taille --;
-		coordXdepl ++;
-		placement (coordX-1,  coordY,  lettre,  taille,  sens);
-	}
-	}
-		if (sens==4)
-		{
-		
-	grille [coordX] [coordY] = lettre;		
-
-	for (int longu =0; longu< taille-1; longu++) {
-		coordXdepl ++;
-		taille --;
-		
-		placement (coordX+1,  coordY,  lettre,  taille,  sens);
-	}
-	}
-			
-		
-	}
-	else if (grille [coordX] [coordY-1] != null && sens == 1 ) {
-		
-		System.out.println("probléme");
-			while (coordYdepl > 0)
-			{
-				grille [coordX] [coordY-coordYdepl] = null;
-				coordYdepl --;
-				
-				
-			}
-			
-		
-	}
-	 
+for (int longu =0; longu< taille-1; longu++) {
+	taille --;
+	coordXdepl ++;
+	placement (coordX-1,  coordY,  lettre,  taille,  sens);
+}
+}
+	if (sens==4)
+	{
 	
-	}
+grille [coordX] [coordY] = lettre;		
 
+for (int longu =0; longu< taille-1; longu++) {
+	coordXdepl ++;
+	taille --;
 	
+	placement (coordX+1,  coordY,  lettre,  taille,  sens);
+}
+}
+		
+	
+}
 
 
 
