@@ -7,7 +7,9 @@ int Nbedestroyeur (int destroyeur) {
 	this.destroyeur = destroyeur;
 	return destroyeur;
 	
-	
 }
+
+
+
 }
 

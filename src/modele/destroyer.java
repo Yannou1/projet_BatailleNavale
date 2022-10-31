@@ -3,15 +3,17 @@ package modele;
 public class destroyer extends bateau {
 int vie = 5;
 int taille = 5;
+String name;
+public destroyer (String name) {
+	this.name = name;
+}
 	@Override
 	public
-	int Taillebateau() {
+	String Taillebateau() {
 	while (taille >0) {
-	
-	char d = 'd';
-		return d;
+		return name;
 	}
-	char o = 's';
+	String o = "";
 	return o;
 	}
 
@@ -22,14 +24,13 @@ int taille = 5;
 	}
 
 	@Override
+	public
 	int VieBateau() {
 		int vie = 5;
 		return vie;
 	}
 	
-	
-	
-	
+
 	
 
 }

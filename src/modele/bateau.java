@@ -2,7 +2,7 @@ package modele;
 
 public abstract class bateau {
 	
-	 abstract int Taillebateau();
+	 abstract String Taillebateau();
 	 abstract int VieBateau();
 	 abstract int Puissancetire();
 		
