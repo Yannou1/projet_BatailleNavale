@@ -43,7 +43,7 @@ static int gencoorY () {
 static void PLaceGrille() {
 	
 	g1.placement(1,12,destroyer1.Namebateau(), destroyer1.VieBateau());
-	g1.placement(1,12,destroyer2.Namebateau(), destroyer2.VieBateau());
+	g1.placement(2,12,destroyer2.Namebateau(), destroyer2.VieBateau());
 	
 
 	
