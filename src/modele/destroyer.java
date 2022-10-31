@@ -9,7 +9,7 @@ public destroyer (String name) {
 }
 	@Override
 	public
-	String Taillebateau() {
+	String Namebateau() {
 	while (taille >0) {
 		return name;
 	}

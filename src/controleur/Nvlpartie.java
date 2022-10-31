@@ -16,11 +16,6 @@ public class Nvlpartie {
 	private static int Y;
 	
 	// on place maintenant les obj crée
-	
-	
-
-
-
 
 static int gencoorX () {
 	System.out.println("X : ");
@@ -46,10 +41,15 @@ static int gencoorY () {
 }
 	
 static void PLaceGrille() {
-	g1.placement(gencoorX(),gencoorY(),destroyer1.Taillebateau(), 5);
-	g1.placement(gencoorX(),gencoorY(),destroyer2.Taillebateau(), 5);
+	
+	g1.placement(1,12,destroyer1.Namebateau(), destroyer1.VieBateau());
+	g1.placement(1,12,destroyer2.Namebateau(), destroyer2.VieBateau());
+	
+
+	
 	
 }
+
 	
 
 

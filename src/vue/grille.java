@@ -6,7 +6,7 @@ import modele.bateau;
 import modele.destroyer;
 
 public class grille {
-
+	String c = "";
 	private String [] [] grille;
 
 	
@@ -14,7 +14,7 @@ public class grille {
 public grille()	{
 	
 grille = new String [16] [16];
-String c = " ";
+
 for (int i= 1; i< 16; i++) {	
 	for (int j= 1; j< 16; j++) {
 		grille [i] [j] = c ;
@@ -30,21 +30,19 @@ for (int i= 1; i< 16; i++) {
 } 
 
 public void placement (int coordX, int coordY, String lettre, int taille) {
-	for (int i= 1; i< 16; i++) {	
-		for (int j= 1; j< 16; j++) {
-			grille [coordX] [coordY] = lettre;
-			
+
+	grille [coordX] [coordY] = lettre;		
+
+	for (int longu =0; longu< taille-1; longu++) {
+		taille --;
+		placement (coordX+1,  coordY,  lettre,  taille);
+	grille [coordX] [coordY] = lettre;
 	}
 		
 	}
-	for (int longu =0; longu< taille; longu++)
-	{
-		coordX ++;
-	grille [coordX] [coordY] = lettre;
-	}
 
 	
-}
+
 
 
 public void affiche() {
