@@ -12,31 +12,48 @@ public class grille {
 
 	
 	
-public grille(int coordX, int coordY, char lettre, int taille)	{
+public grille()	{
 	
-grille = new char [15] [15];
-
-for (int i= 0; i< 15; i++) {	
-	for (int j= 0; j< 15; j++) {
-		grille [coordX] [coordY] = lettre;
+grille = new char [16] [16];
+char c = ' ' ;
+for (int i= 1; i< 16; i++) {	
+	for (int j= 1; j< 16; j++) {
+		grille [i] [j] = c ;
 		
 }
-	
-}
-for (int longu =0; longu< taille; longu++)
-{
-	coordX ++;
-grille [coordX] [coordY] = lettre;
 }
 
+
+
+
+
+
 } 
+
+void action (int coordX, int coordY, char lettre, int taille) {
+	for (int i= 1; i< 16; i++) {	
+		for (int j= 1; j< 16; j++) {
+			grille [coordX] [coordY] = lettre;
+			
+	}
+		
+	}
+	for (int longu =0; longu< taille; longu++)
+	{
+		coordX ++;
+	grille [coordX] [coordY] = lettre;
+	}
+
+	
+}
+
 
 void affiche( ) {
 	
 	System.out.println();
-	for (int i= 0; i< 15; i++) {
-		for (int j= 0; j< 15; j++) {
-			System.out.print("_|_ "+ grille [i] [j]);
+	for (int i= 1; i< 16; i++) {
+		for (int j= 1; j< 16; j++) {
+			System.out.print("_|_"+ grille [i] [j]);
 		}
 		System.out.println("_|");
 
@@ -50,9 +67,12 @@ public static void main(String[] args)
 	
 	
 	destroyer destroyer = new destroyer();
-	grille g1 = new grille(1,14,(char) destroyer.Taillebateau(), 5);
+	grille g1 = new grille();
+	g1.action(1,14,(char) destroyer.Taillebateau(), 5);
 	g1.affiche();
 			
 }
+
+
 
 }

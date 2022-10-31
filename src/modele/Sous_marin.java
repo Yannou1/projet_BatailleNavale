@@ -14,4 +14,10 @@ public class Sous_marin extends bateau{
 		return 0;
 	}
 
+	@Override
+	int VieBateau() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

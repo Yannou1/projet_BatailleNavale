@@ -1,6 +1,7 @@
 package modele;
 
 public class destroyer extends bateau {
+int vie = 5;
 int taille = 5;
 	@Override
 	public
@@ -21,15 +22,9 @@ int taille = 5;
 	}
 
 	@Override
-	int nombre() {
-		int nombre = 3;
-		
-		return 0;
-	}
-	
-	public int destroyer1 (){
-		
-		return taille;
+	int VieBateau() {
+		int vie = 5;
+		return vie;
 	}
 	
 	

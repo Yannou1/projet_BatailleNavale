@@ -15,4 +15,10 @@ public class croiseur extends bateau {
 		return 0;
 	}
 
+	@Override
+	int VieBateau() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
