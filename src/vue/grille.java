@@ -1,14 +1,11 @@
 package vue;
 
-import java.util.ArrayList;
-
-import modele.bateau;
-import modele.destroyer;
 
 public class grille {
 	String c = "";
 	private String [] [] grille;
-
+	int coordXdepl = 0;
+	int coordYdepl = 0;
 	
 	
 public grille()	{
@@ -22,27 +19,77 @@ for (int i= 1; i< 16; i++) {
 }
 }
 
-
-
-
-
-
 } 
 
-@SuppressWarnings("unused")
-public void placement (int coordX, int coordY, String lettre, int taille) {
+
+public void placement (int coordX, int coordY, String lettre, int taille, int sens) {
+	
+	
+	
 	if (grille [coordX] [coordY] == null ) {
+		if (sens==1)
+		{
+		
 	grille [coordX] [coordY] = lettre;		
 
 	for (int longu =0; longu< taille-1; longu++) {
 		taille --;
-		placement (coordX+1,  coordY,  lettre,  taille);
-	grille [coordX] [coordY] = lettre;
+		coordYdepl ++;
+		placement (coordX,  coordY+1,  lettre,  taille,  sens);
 	}
 	}
-	else 
-		System.out.println("probléme");
+		if (sens==2)
+		{
 		
+	grille [coordX] [coordY] = lettre;		
+
+	for (int longu =0; longu< taille-1; longu++) {
+		taille --;
+		coordYdepl ++;
+		placement (coordX,  coordY-1,  lettre,  taille,  sens);
+	}
+	}
+		if (sens==3)
+		{
+		
+	grille [coordX] [coordY] = lettre;		
+
+	for (int longu =0; longu< taille-1; longu++) {
+		taille --;
+		coordXdepl ++;
+		placement (coordX-1,  coordY,  lettre,  taille,  sens);
+	}
+	}
+		if (sens==4)
+		{
+		
+	grille [coordX] [coordY] = lettre;		
+
+	for (int longu =0; longu< taille-1; longu++) {
+		coordXdepl ++;
+		taille --;
+		
+		placement (coordX+1,  coordY,  lettre,  taille,  sens);
+	}
+	}
+			
+		
+	}
+	else if (grille [coordX] [coordY-1] != null && sens == 1 ) {
+		
+		System.out.println("probléme");
+			while (coordYdepl > 0)
+			{
+				grille [coordX] [coordY-coordYdepl] = null;
+				coordYdepl --;
+				
+				
+			}
+			
+		
+	}
+	 
+	
 	}
 
 	
@@ -54,7 +101,14 @@ public void affiche() {
 	System.out.println();
 	for (int i= 1; i< 16; i++) {
 		for (int j= 1; j< 16; j++) {
+			if (grille [i] [j] == null ) {
+				grille [i] [j] = "";
 			System.out.print("_|_"+ grille [i] [j]);
+		
+			}
+			else 
+				System.out.print( grille [i] [j] + "|");
+			
 		}
 		System.out.println("_|");
 

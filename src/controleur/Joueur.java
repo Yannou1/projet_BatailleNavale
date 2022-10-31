@@ -1,7 +1,7 @@
 package controleur;
 
 public class Joueur {
-	 private int destroyeur = 3;
+	 private int destroyeur;
 
 int Nbedestroyeur (int destroyeur) {
 	this.destroyeur = destroyeur;
