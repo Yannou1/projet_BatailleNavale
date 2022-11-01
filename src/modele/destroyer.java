@@ -14,6 +14,7 @@ public int coordY;
 public Point[] coord;
 
 
+
 public destroyer (String name) {
 	this.coord = new Point [5];
 	this.name = name;
@@ -46,12 +47,10 @@ public destroyer (String name) {
 		}
 		}
 	
-
-	
 	
 	
 }
-
+// mettre les partie qui peuvent être commune dans bateu sans abstract
 	@Override
 	public
 	String Namebateau() {
@@ -78,7 +77,7 @@ public destroyer (String name) {
 	@Override
 	int taille() {
 		int taille= 5;
-		return 0;
+		return taille;
 	}
 
 	
@@ -150,5 +149,6 @@ public destroyer (String name) {
 		}
 		return sens;
 	}
+	
 
 }
