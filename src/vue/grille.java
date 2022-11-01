@@ -68,8 +68,7 @@ for (int longu =0; longu< taille-1; longu++) {
 	placement (coordX+1,  coordY,  lettre,  taille,  sens);
 }
 }
-		
-	
+			
 }
 
 

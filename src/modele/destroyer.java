@@ -12,6 +12,7 @@ public int sense;
 public int coordX;
 public int coordY;
 public Point[] coord;
+public Point[] attaque;
 
 
 
@@ -62,9 +63,27 @@ public destroyer (String name) {
 	}
 
 	@Override
-	int Puissancetire() {
-		// TODO Auto-generated method stub
-		return 0;
+	Point[] Puissancetire() {
+		int X = 0;
+		while (X >= 15 || X < 1) {
+			Scanner sc = new Scanner(System.in);
+			 X = sc.nextInt();
+			if (X <0) System.out.println("non-valide");
+		}
+		
+		
+		int Y= 0;
+		while (X >= 15 || X < 1) {
+			Scanner sc = new Scanner(System.in);
+			 X = sc.nextInt();
+			if (X <0) System.out.println("non-valide");
+		}
+		
+		for (int i=0; i< 1; i++) {
+			Point p4 = new Point(X, Y );
+		attaque[i] = p4;
+		}
+		return attaque;
 	}
 
 	@Override
@@ -83,10 +102,9 @@ public destroyer (String name) {
 	
 	@Override
 	int coordonneX() {
-		System.out.println("X : ");
+		System.out.println("X " +name+": ");
 		int X = 0;
 		while (X >= 15 || X < 1) {
-			System.out.println("1 : ");
 			Scanner sc = new Scanner(System.in);
 			 X = sc.nextInt();
 			if (X <0) System.out.println("non-valide");
@@ -97,7 +115,7 @@ public destroyer (String name) {
 	
 	@Override
 	 int coordonneY() {
-		System.out.println("Y : ");
+		System.out.println("Y"+name+" : ");
 		int Y = 0;
 		while (Y >= 15 || Y <= 1) {
 			Scanner sc = new Scanner(System.in);
@@ -126,11 +144,8 @@ public destroyer (String name) {
 			switch(choix)
 
 			{
-				
-			
 			case 1:
 				sens = 1;
-				
 				break; 
 			case 2 :
 				sens = 2;
