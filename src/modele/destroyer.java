@@ -26,7 +26,7 @@ public destroyer (String name)
 	this.coordY = (int) p1.getY();	
 	sens();
 	this.sense = getsens();
-	coord=ClcPts.coordpts(sense, p1);
+	coord=ClcPts.coordpts(sense, p1, taille);
 	this.nbattaque =nbattaque;
 	
 	
@@ -47,7 +47,7 @@ public destroyer (String name)
 
 	public Point[] Puissancetire() 
 	{
-		
+	
 		int X = 0;
 		while (X >= 15 || X <= 1) {
 			Scanner sc = new Scanner(System.in);

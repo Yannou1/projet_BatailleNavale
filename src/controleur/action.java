@@ -5,30 +5,42 @@ import java.util.Scanner;
 
 import modele.destroyer;
 
-public class action {
-	public Point[] Puissancetire() 
-	{
+public class action 
+{
+	public void quelaction() {
 		
-		int X = 0;
-		while (X >= 15 || X <= 1) {
+		boolean test = true;
+		while(test == true )
+		{
 			Scanner sc = new Scanner(System.in);
-			 X = sc.nextInt();
-			if (X <0) System.out.println("non-valide");
-		}
+			System.out.println("taper tirer");
+			System.out.println("taper bouger");
+
+			
+			int choix = sc.nextInt();
+			if (choix <0) System.out.println("non-valide");
 		
-		
-		int Y= 0;
-		while (X >= 15 || X <= 1) {
-			Scanner sc = new Scanner(System.in);
-			 X = sc.nextInt();
-			if (X <0) System.out.println("non-valide");
-		}
-		
-		for (int i=0; i< 1; i++) {
-			Point p4 = new Point(X, Y );
-		attaque[i] = p4;
-		}
-		return attaque;
+			switch(choix)
+			{
+			case 1:
+				
+				
+				break; 
+			case 2 :
+				
+				break;
+
 	}
 
 }
+}
+	void tir()
+	{
+		
+	}
+}
+
+
+
+
+

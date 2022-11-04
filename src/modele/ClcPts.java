@@ -13,15 +13,16 @@ public class ClcPts {
 	static int coordX = 0;
 	static int  coordY= 0;
 	
-	public static Point[] coordpts(int sens, Point p1 )
+	public static Point[] coordpts(int sens, Point p1, int taille )
 	{
 		coordX = (int) p1.getX();
 		coordY = (int) p1.getY();	
-		coord = new Point [3];
+		coord = new Point [taille];
 		
 		
 		coord[0] =  p1;
-		
+		if (taille != 1)
+		{
 		for (int i=1; i<= 2; i++) 
 		{
 			
@@ -47,6 +48,7 @@ public class ClcPts {
 					coord[i] = new Point(coordX, coordY+i ); ;
 				
 			}
+		}
 		}
 		return coord;
 	}
