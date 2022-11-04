@@ -21,10 +21,7 @@ public class menu {
 			if (choix <0) System.out.println("non-valide");
 		
 			switch(choix)
-
 			{
-				
-			
 			case 1:
 				
 				break; 
