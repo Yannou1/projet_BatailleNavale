@@ -17,7 +17,7 @@ public class Placegrille {
 		int Smarinpose =0;
 		int bateaupose = 0;
 		
-		ArrayList<sousmarin> SmarinList = new ArrayList<sousmarin>() ;
+	
 		
 		 
 		
