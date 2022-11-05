@@ -1,12 +1,6 @@
 package controleur;
 
-import java.awt.Point;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Scanner;
 
-import modele.Placegrille;
-import modele.destroyer;
 import vue.grille;
 
 
@@ -29,11 +23,8 @@ public class Nvlpartie {
 public static void main(String[] args) {
 	
 	Placegrille.PLaceGrille();
-	//for(Point i : destroyer2.coord) {
-		//System.out.println(i);
-	//}
-
-
+	ChoseBoat.choseBoat();
+	System.out.println(controleur.Joueur.destroyerList.get(0).getvie());
 }
 
 

@@ -44,7 +44,9 @@ public abstract class Bateau {
 		
 	}
 	
-	abstract int VieBateau();
+	abstract int VieBateau(int tt);
+	public abstract Point[] Puissancetire() ;
+	
 
 	
 	
@@ -107,8 +109,8 @@ public abstract class Bateau {
 				Point p1 = new Point (X,Y);
 				return p1;
 			}
-			
-	
+
+
 
 	
 

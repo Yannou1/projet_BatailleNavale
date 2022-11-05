@@ -1,4 +1,4 @@
-package controleur;
+package modele;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public static boolean boathere(ArrayList<Point[]> Mesbateaux )
 					}
 				} 
 				else 
-					System.out.println(Mesbateaux.size());;
+					System.out.println(Mesbateaux.size());
 			}
 		}
 	}
@@ -57,25 +57,36 @@ public static boolean coordValide(Point[] monbateau)
 return value;
 }
 
+public static boolean isPlacementok(Point[] bat, ArrayList<Point[]> bateauxjoueur )
+{
+	
+	if (coordValide(bat) == false & boathere(bateauxjoueur) == false ) {
+		return false; 
+	}
+	else return true;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

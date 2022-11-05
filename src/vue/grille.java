@@ -4,7 +4,7 @@ import java.awt.Point;
 
 public class grille {
 	String c = "";
-	private String [] [] grille;
+	private static String [] [] grille;
 	
 	
 public grille()	{
@@ -58,7 +58,11 @@ public void affiche() {
 
 }
 
-
+public static String getGrille(int X, int Y) {
+	
+	return grille [X-1] [Y-1];
+	
+}
 
 
 }
