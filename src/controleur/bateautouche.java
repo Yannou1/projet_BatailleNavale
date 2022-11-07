@@ -50,6 +50,16 @@ for (Point point : att)
 return BatKey;  
 }
 	
+static void TestBateau() {
+	
+	
+}
+
+
+
+
+
+
 }
 
 

@@ -43,8 +43,8 @@ public destroyer (String name)
 	
 	
 @Override
-	public Point[] Puissancetire() 
-	{
+	public void Puissancetire() 
+	{ 
 		
 		int X = 0;
 		while (X > 15 || X < 1) {
@@ -65,15 +65,8 @@ public destroyer (String name)
 			Point p4 = new Point(X, Y );
 		attaque[i] = p4;
 		}
-		return attaque;
 	}
 	
-Point [] getattaque()
-{
-
-	return destroyer.Puissancetire();
-	
-}
 
 
 

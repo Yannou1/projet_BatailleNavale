@@ -11,7 +11,7 @@ import modele.sousmarin;
 public class action
 {
 	static Point[] hit;
-	public static void quelactiondest(Object object) {
+	public static void quelactiondest(Object object, Joueur joueur) {
 		System.out.println(object);
 		boolean test = true;
 		while(test == true )
@@ -26,36 +26,21 @@ public class action
 			case 1:
 				
 				
-				if (isdestr(object) == true ) {
-					destroyer a = objecttodestroy(object);
-					 a.Puissancetire(); 
+				if (isdestr(object, joueur) == true ) {
+					destroyer a = objecttodestroy(object, joueur);
+					  a.Puissancetire(); 
 						hit= new Point[1];
-						hit = bateautouche.isboathit(a.attaque, Nvlpartie.joueur1.arraylist);
+						hit = bateautouche.isboathit(a.attaque, joueur.arraylist);
 						test =false;
-						for (Point i :hit)
-						{
-							if ( i ==null)
-								break;
-							else {
-								String[] toucher= bateautouche.whichboat(hit);
-								for (String b : toucher) 
-								{
-									 Object p= Nvlpartie.joueur1.Boats.get(b);
-									destroyer c  = objecttodestroy(p);
-									c.VieBateau(1);	
-								}
-							}
-						}
-					
-						break; 	
 				}
-				
-				if (isSmarin(object) == true)
+				if (isSmarin(object, joueur) == true)
 				{
-					sousmarin a = objectTodsousM(object);
+					sousmarin a = objectTodsousM(object, joueur);
 					 a.Puissancetire(); 
 					hit= new Point[1];
-					hit = bateautouche.isboathit(a.attaque, Nvlpartie.joueur1.arraylist);
+					hit = bateautouche.isboathit(a.attaque, joueur.arraylist);
+				}
+				
 					test =false;
 					for (Point i :hit)
 					{
@@ -65,16 +50,26 @@ public class action
 							String[] toucher= bateautouche.whichboat(hit);
 							for (String b : toucher) 
 							{
-								 Object p= Nvlpartie.joueur1.Boats.get(b);
-								destroyer c  = objecttodestroy(p);
-								c.VieBateau(1);	
+								Object p= joueur.Boats.get(b);
+									if (isdestr(p, joueur) == true)
+									{
+									destroyer c  = objecttodestroy(p, joueur);
+									c.VieBateau(1);	
+									}
+									if (isSmarin(p, joueur) == true)
+									{
+									sousmarin c  = objectTodsousM(p, joueur);
+									c.VieBateau(1);	
+									}
+								
 							}
 						}
 					}
-				}
+				
 				break; 
 				
 			case 2 :
+				int t = 1;
 				break;
 	}
 
@@ -84,18 +79,18 @@ public class action
 	
 	
 	
-	static destroyer objecttodestroy(Object object) {
+	static destroyer objecttodestroy(Object object,Joueur joueur) {
 
 
-		for(destroyer i :  controleur.Joueur.destroyerList) {
+		for(destroyer i :  joueur.destroyerList) {
 			if (object == i)
 				return i;
 		}
 		return null;
 	}
 	
-	static sousmarin objectTodsousM(Object object) {
-		for(sousmarin i:  controleur.Joueur.SmarinList) {
+	static sousmarin objectTodsousM(Object object, Joueur joueur) {
+		for(sousmarin i:  joueur.SmarinList) {
 			if (object == i)
 				return i;
 		}
@@ -106,17 +101,17 @@ public class action
 	
 
 	
-	static boolean isdestr(Object object ) {
+	static boolean isdestr(Object object, Joueur joueur ) {
 		
-		if (objecttodestroy(object)!=null)
+		if (objecttodestroy(object, joueur)!=null)
 			return true;
 		else
 		return false;
 		
 	}
 	
-	static boolean isSmarin(Object object) {
-		if (objectTodsousM(object)!=null)
+	static boolean isSmarin(Object object, Joueur joueur) {
+		if (objectTodsousM(object, joueur)!=null)
 			return true;
 		else
 		return false;
@@ -129,9 +124,7 @@ Point [] getaction(int choix) {
 	if (choix ==1)
 		
 	return this.hit;
-	
-	else 
-		
+	else 	
 	return null;
 	
 }

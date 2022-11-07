@@ -1,6 +1,7 @@
 package modele;
 
 import java.awt.Point;
+import java.util.Scanner;
 
 public class sousmarin extends Bateau{
 
@@ -15,6 +16,7 @@ public class sousmarin extends Bateau{
 	public sousmarin(String name) {
 		super(name, taille);
 		this.coord = new Point [1];
+		this.attaque = new Point [1];
 		this.vie = VieBateau(0);
 		Point p1 = firstpoint();
 		this.coordX = (int) p1.getX();
@@ -28,6 +30,7 @@ public class sousmarin extends Bateau{
 
 
 	@Override
+	public
 	int VieBateau(int tt) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -35,9 +38,25 @@ public class sousmarin extends Bateau{
 
 	@Override
 	public
-	Point[] Puissancetire() {
-		// TODO Auto-generated method stub
-		return null;
+	void Puissancetire() {
+		int X = 0;
+		while (X > 15 || X < 1) {
+			Scanner sc1 = new Scanner(System.in);
+			 X = sc1.nextInt();
+			if (X <0) System.out.println("non-valide");
+		}
+		
+		
+		int Y= 0;
+		while (Y > 15 || Y < 1) {
+			Scanner sc = new Scanner(System.in);
+			 Y= sc.nextInt();
+			if (X <0) System.out.println("non-valide");
 	}
+		for (int i=0; i< 1; i++) {
+			Point p4 = new Point(X, Y );
+		attaque[i] = p4;
+		}
 
+}
 }

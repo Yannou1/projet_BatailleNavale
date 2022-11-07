@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ChoseBoat {
 	boolean test = true;
 	
-	static void choseBoat() 
+	static void choseBoat(Joueur joueur) 
 	{
 		boolean test = true;
 		while(test == true )
@@ -19,11 +19,13 @@ public class ChoseBoat {
 			{
 			case 1:
 				test = false;
-				Joueur.getMap("d1");
-				System.out.println(Joueur.getMap("d1"));
-				action.quelactiondest(Nvlpartie.joueur1.Boats.get("d1"));
+				action.quelactiondest(joueur.Boats.get("d1"),joueur);
 				break; 
 			case 2 :
+				test = false;
+				action.quelactiondest(joueur.Boats.get("S1"), joueur);
+				break; 
+			case 3 :
 				break;
 
 			}

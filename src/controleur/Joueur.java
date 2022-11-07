@@ -9,12 +9,13 @@ import modele.sousmarin;
 
 public class Joueur {
 	public ArrayList<Point[]> arraylist;
-	public static HashMap<String, Object> Boats;
-	static ArrayList<destroyer> destroyerList ;
-	static ArrayList<sousmarin> SmarinList  ;
+	public  HashMap<String, Object> Boats;
+	 ArrayList<destroyer> destroyerList ;
+	 static ArrayList<sousmarin> SmarinList  ;
 	
 
 Joueur(String name) {
+	
 	 arraylist = new ArrayList<Point []>();
 	 Boats = new HashMap<String, Object>();
 	 destroyerList = new ArrayList<destroyer>();
@@ -33,9 +34,6 @@ public void set(int index, Point[] coord) {
 	
 }
 
-static Object getMap (String Idboat) {
-	return Boats.get(Idboat);
-}
 
 }
 
