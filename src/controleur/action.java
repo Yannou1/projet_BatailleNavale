@@ -69,12 +69,41 @@ public class action
 				break; 
 				
 			case 2 :
-				int t = 1;
+				
+				if (isdestr(object, joueur) == true ) {
+					destroyer a = objecttodestroy(object, joueur);
+						int t= a.sense;
+						int indice =0;
+						if (t == 1 || t ==2) {
+							//vider coord bateau
+							Nvlpartie.g1.placement(a.coord, null);
+							for (Point i : a.coord) {
+								int X = (int) i.getX();
+								int Y = (int) i.getY();
+								X++;
+								Point p1 = new Point(X,Y);
+							a.coord[indice] = p1;
+								
+								indice ++;
+								
+							}
+							Nvlpartie.g1.placement(a.coord, a.getName());
+							Nvlpartie.g1.affiche();
+							break;
+						}
+				}
+				
 				break;
 	}
 
 }
 }
+	
+	
+	
+	
+	
+	
 	
 	
 	
