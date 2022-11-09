@@ -11,7 +11,7 @@ public class Joueur {
 	public ArrayList<Point[]> arraylist;
 	public  HashMap<String, Object> Boats;
 	 ArrayList<destroyer> destroyerList ;
-	 static ArrayList<sousmarin> SmarinList  ;
+	 ArrayList<sousmarin> SmarinList  ;
 	
 
 Joueur(String name) {

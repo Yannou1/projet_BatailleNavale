@@ -85,18 +85,42 @@ public class action
 							a.coord[indice] = p1;
 								
 								indice ++;
+								Nvlpartie.g1.placement(a.coord, a.getName());
+								Nvlpartie.g1.affiche();
 								
 							}
-							Nvlpartie.g1.placement(a.coord, a.getName());
-							Nvlpartie.g1.affiche();
+							if (isSmarin(object, joueur) == true ) {
+								sousmarin a1 = objectTodsousM(object, joueur);
+									int t1= a1.sense;
+									int indice1 =0;
+									if (t1 == 1 || t1 ==2) {
+										//vider coord bateau
+										Nvlpartie.g1.placement(a1.coord, null);
+										for (Point i : a1.coord) {
+											int X = (int) i.getX();
+											int Y = (int) i.getY();
+											X++;
+											Point p1 = new Point(X,Y);
+											a1.coord[indice1] = p1;
+											
+											indice1 ++;
+											Nvlpartie.g1.placement(a1.coord, a1.getName());
+											Nvlpartie.g1.affiche();
+							
+										}
+
+										
 							break;
 						}
 				}
 				
 				break;
-	}
+						}
+				}
+			}
+		}
 
-}
+
 }
 	
 	

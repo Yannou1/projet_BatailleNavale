@@ -26,6 +26,7 @@ public static void main(String[] args) {
 	Placegrille.PLaceGrille(joueur1);
 	
 	//Placegrille.PLaceGrille(joueur2);
+
 	ChoseBoat.choseBoat(joueur1);
 	System.out.println(joueur1.destroyerList.get(0).getvie());
 	g1.affiche();

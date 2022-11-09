@@ -74,24 +74,24 @@ public class Placegrille {
 		case 2 :
 			if (Smarinpose <= nbSmarin)
 			{
-				controleur.Joueur.SmarinList.add(new sousmarin(Smarinname));	
-				joueur.ajouter(controleur.Joueur.SmarinList.get(Smarinpose).coord);
-				for ( sousmarin i : controleur.Joueur.SmarinList )
+				joueur.SmarinList.add(new sousmarin(Smarinname));	
+				joueur.ajouter(joueur.SmarinList.get(Smarinpose).coord);
+				for ( sousmarin i : joueur.SmarinList )
 				{
 					while (true) {
-						if (Testplacement.isPlacementok(controleur.Joueur.SmarinList.get(Smarinpose).coord, joueur.arraylist) ==false)
+						if (Testplacement.isPlacementok(joueur.SmarinList.get(Smarinpose).coord, joueur.arraylist) ==false)
 						{
-							Nvlpartie.g1.placement(controleur.Joueur.SmarinList.get(Smarinpose).coord,controleur.Joueur.SmarinList.get(Smarinpose).getName());
+							Nvlpartie.g1.placement(joueur.SmarinList.get(Smarinpose).coord,joueur.SmarinList.get(Smarinpose).getName());
 							Nvlpartie.g1.affiche();
-							joueur.Boats.put(controleur.Joueur.SmarinList.get(Smarinpose).getName(),controleur.Joueur.SmarinList.get(Smarinpose) );
+							joueur.Boats.put(joueur.SmarinList.get(Smarinpose).getName(),joueur.SmarinList.get(Smarinpose) );
 							bateaupose ++;
 							Smarinpose++;
 							break;
 						}
 						else {
 							System.out.println("coordoné non valide pour " +Smarinname +" nouvel coordonées :" );
-							controleur.Joueur.SmarinList.set(Smarinpose, new sousmarin(Smarinname));
-							joueur.set(bateaupose,controleur.Joueur.SmarinList.get(Smarinpose).coord);
+							joueur.SmarinList.set(Smarinpose, new sousmarin(Smarinname));
+							joueur.set(bateaupose,joueur.SmarinList.get(Smarinpose).coord);
 						}
 						
 					}
