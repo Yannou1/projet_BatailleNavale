@@ -26,7 +26,9 @@ public abstract class Bateau {
 		return this.name;
 	
 	}
-	
+	public int gettaille() {
+		return this.taille;
+	}
 	public int getsens()
 	{
 		return sens;

@@ -2,23 +2,25 @@ package vue;
 
 import java.awt.Point;
 
+import controleur.Joueur;
+
 public class grille {
 	String c = "";
-	private static String [] [] grille;
+	private  String [] [] grille;
 	
 	
-public grille()	{
-	
-grille = new String [15] [15];
-
-for (int i= 0; i< 15; i++) {	
-	for (int j= 0; j< 15; j++) {
-		grille [i] [j] = null ;
-		
-}
-}
-
-} 
+	public grille()
+	{
+		grille = new String [15] [15];
+		for (int i= 0; i< 15; i++) 
+		{	
+			for (int j= 0; j< 15; j++) 
+			{
+				grille [i] [j] = null ;
+				
+			}
+		}
+	} 
 
 
 public void placement (Point[] BatCoord, String name) {
@@ -58,9 +60,9 @@ public void affiche() {
 
 }
 
-public static String getGrille(int X, int Y) {
+public String getGrille(int X, int Y) {
 	
-	return grille [X-1] [Y-1];
+	return this.grille [X-1] [Y-1];
 	
 }
 

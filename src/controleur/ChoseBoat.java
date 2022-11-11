@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class ChoseBoat {
 	boolean test = true;
 	
-	static void choseBoat(Joueur joueur) 
+	static void choseBoat(Joueur joueur, Joueur joueur2) 
 	{
 		
 		Object choix = null;
-		while(joueur.Boats.get(choix ) == null )
+		while(joueur.Boats.get(choix) == null )
 		{
 			Scanner sc = new Scanner(System.in);
 			System.out.println("");
@@ -17,7 +17,7 @@ public class ChoseBoat {
 			 choix = sc.next();
 			Object a = joueur.Boats.get(choix);
 			}
-		 action.quelactiondest(joueur.Boats.get(choix),joueur);
+		 action.quelactiondest(joueur.Boats.get(choix),joueur, joueur2);
 		}
 	}
 

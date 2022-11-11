@@ -7,11 +7,11 @@ import vue.grille;
 
 
 public class bateautouche {
-static Point [] toucher ;
-static int CoordX =0;
-static int CoordY =0;
-static String[] BatKey;
-	static Point[] isboathit(Point[] attaque,ArrayList<Point[]> tousBat )
+ static Point [] toucher ;
+ static int CoordX =0;
+ static int CoordY =0;
+ static String[] BatKey;
+	 static Point[] isboathit(Point[] attaque,ArrayList<Point[]> tousBat )
 	{ 
 	toucher = new Point[1];
 	int indice =0;
@@ -38,20 +38,18 @@ static String[] BatKey;
 		return toucher;
 	}
 	
-	static String [] whichboat(Point [] att) {
+	  static String [] whichboat(Point [] att, Joueur joueur) {
 		BatKey = new String[att.length];
 		int indice2 =0;
 	for (Point point : att)
 	{
 		CoordX = (int) point.getX();
 		CoordY =(int) point.getY();
-		BatKey[indice2] = grille.getGrille(CoordX, CoordY);
-		Nvlpartie.g1.placement(att, "X");
+		BatKey[indice2] = joueur.g1.getGrille(CoordX, CoordY);
 		indice2 ++;
 	}
 	return BatKey;  
 	}
-		
 	static void TestBateau() {
 		
 		

@@ -51,8 +51,8 @@ public class Placegrille {
 					while (true) {
 						if (Testplacement.isPlacementok(joueur.destroyerList.get(destpose).coord, joueur.arraylist) ==false)
 						{
-							Nvlpartie.g1.placement(joueur.destroyerList.get(destpose).coord,joueur.destroyerList.get(destpose).getName());
-							Nvlpartie.g1.affiche();
+							joueur.g1.placement(joueur.destroyerList.get(destpose).coord,joueur.destroyerList.get(destpose).getName());
+							joueur.g1.affiche();
 							joueur.Boats.put(joueur.destroyerList.get(destpose).getName(),joueur.destroyerList.get(destpose) );
 							bateaupose ++;
 							destpose++;
@@ -81,8 +81,8 @@ public class Placegrille {
 					while (true) {
 						if (Testplacement.isPlacementok(joueur.SmarinList.get(Smarinpose).coord, joueur.arraylist) ==false)
 						{
-							Nvlpartie.g1.placement(joueur.SmarinList.get(Smarinpose).coord,joueur.SmarinList.get(Smarinpose).getName());
-							Nvlpartie.g1.affiche();
+							joueur.g1.placement(joueur.SmarinList.get(Smarinpose).coord,joueur.SmarinList.get(Smarinpose).getName());
+							joueur.g1.affiche();
 							joueur.Boats.put(joueur.SmarinList.get(Smarinpose).getName(),joueur.SmarinList.get(Smarinpose) );
 							bateaupose ++;
 							Smarinpose++;
