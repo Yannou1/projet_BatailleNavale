@@ -109,13 +109,6 @@ public abstract class Bateau {
 				Point p1 = new Point (X,Y);
 				return p1;
 			}
-
-
-
-	
-
-	
-	
 	
 }
 	

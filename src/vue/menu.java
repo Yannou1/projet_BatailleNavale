@@ -16,7 +16,6 @@ public class menu {
 			System.out.println("taper (3) aide");
 			System.out.println("taper (4) quiter");
 			System.out.println("que faire ? :");
-			
 			int choix = sc.nextInt();
 			if (choix <0) System.out.println("non-valide");
 		

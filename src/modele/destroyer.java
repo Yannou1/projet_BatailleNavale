@@ -1,7 +1,6 @@
 package modele;
 
 import java.awt.Point;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class destroyer extends Bateau 
@@ -41,7 +40,6 @@ public destroyer (String name)
 		return vie;
 	}
 	
-	
 @Override
 	public void Puissancetire() 
 	{ 
@@ -67,9 +65,6 @@ public destroyer (String name)
 		}
 	}
 	
-
-
-
 
 }
 
