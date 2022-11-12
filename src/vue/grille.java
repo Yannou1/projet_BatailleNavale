@@ -31,7 +31,7 @@ public void placement (Point[] BatCoord, String name) {
 		int Y= (int) i.getY();
 		grille [X-1] [Y-1] = name;	
 		}
-		else break;
+		else continue;
 		
 	}
 			
@@ -46,18 +46,26 @@ public void affiche() {
 	{
 		for (int i= 0; i< 15; i++) 
 		{
+			
 			if (grille [i] [j] == null )
 			{
 				
-			System.out.print("_|_");
+			System.out.print("|___");
 		
 			}
-			else 
+			else {
+				
+				System.out.print( "|" + grille [i] [j]  );
+				
+			}
 			
-				System.out.print( grille [i] [j] + "|");
+			
+			
+			
 			
 		}
-		System.out.println("_|");
+		
+		System.out.println("|");
 
 	}
 	System.out.println();

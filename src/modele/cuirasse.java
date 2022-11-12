@@ -13,10 +13,10 @@ public class cuirasse extends Bateau {
 	private final static int taille = 7;
 	destroyer destroyer ;
 	
-	cuirasse(String name, int taille) {
+	public cuirasse(String name) {
 		super(name, taille);
-		this.coord = new Point [3];
-		this.attaque = new Point [1];
+		this.coord = new Point [taille];
+		this.attaque = new Point [10];
 		this.vie = VieBateau(0);
 		Point p1 = firstpoint();
 		this.coordX = (int) p1.getX();
@@ -52,12 +52,32 @@ public class cuirasse extends Bateau {
 				if (X <0) System.out.println("non-valide");
 			}
 			
-			for (int i=0; i< 1; i++) {
-				Point p4 = new Point(X, Y );
-			attaque[i] = p4;
+			
+				Point p1 = new Point(X, Y );
+				attaque[0] = p1;
+				Point p2 = new Point(X +1, Y );
+				attaque[1] = p2;
+				Point p3 = new Point(X -1, Y );
+				attaque[2] = p3;
+				Point p4 = new Point(X , Y +1);
+				attaque[3] = p4;
+				Point p5 = new Point(X , Y -1);
+				attaque[4] = p5;
+				Point p6 = new Point(X-1, Y-1 );
+				attaque[5] = p6;
+				Point p7 = new Point(X-1, Y +1);
+				attaque[6] = p7;
+				Point p8 = new Point(X+1, Y+1 );
+				attaque[7] = p8;
+				Point p9 = new Point(X+1, Y -1);
+				attaque[8] = p9;
+				Point p10 = new Point(X+2, Y );
+				attaque[9] = p10;
+				
+			
 			}
 		}
-}
+
 	
 	
 	

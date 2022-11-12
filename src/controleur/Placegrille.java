@@ -1,10 +1,11 @@
 package controleur;
 
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 import modele.Testplacement;
 import modele.croiseur;
+import modele.cuirasse;
 import modele.destroyer;
 import modele.sousmarin;
 
@@ -15,10 +16,12 @@ public class Placegrille {
 		final int nbSmarin =1;
 		final int nbDest =3;
 		final int nbcroiseur =1;
+		final int nbcuirasse =1;
 		int destpose =0;
 		int Smarinpose =0;
 		int bateaupose = 0;
 		int croiseurpose = 0;
+		int cuirasseposee =0;
 		
 		
 		
@@ -33,9 +36,10 @@ public class Placegrille {
 		
 		int choix = sc.nextInt();
 		if (choix <0) System.out.println("non-valide");
-		String destroyername = "d" + Integer.toString(joueur.getDestroyerList().size()+1);
-		String Smarinname = "S" + Integer.toString(joueur.SmarinList.size()+1);
-		String croiseurname = "C" + Integer.toString(joueur.croiseurList.size()+1);
+		String destroyername = "de" + Integer.toString(joueur.getDestroyerList().size()+1);
+		String Smarinname = "so" + Integer.toString(joueur.SmarinList.size()+1);
+		String croiseurname = "cr" + Integer.toString(joueur.getCroiseurList().size()+1);
+		String cuirassename = "cu" + Integer.toString(joueur.getCuirasseList().size()+1);
 		
 		switch(choix)
 		{
@@ -102,24 +106,24 @@ public class Placegrille {
 		case 3 :
 			if (croiseurpose <= nbcroiseur)
 			{
-				joueur.croiseurList.add(new croiseur(croiseurname));	
-				joueur.ajouter(joueur.croiseurList.get(croiseurpose).coord);
-				for ( croiseur i : joueur.croiseurList )
+				joueur.getCroiseurList().add(new croiseur(croiseurname));	
+				joueur.ajouter(joueur.getCroiseurList().get(croiseurpose).coord);
+				for ( croiseur i : joueur.getCroiseurList() )
 				{
 					while (true) {
-						if (Testplacement.isPlacementok(joueur.croiseurList.get(croiseurpose).coord, joueur.arraylist) ==false)
+						if (Testplacement.isPlacementok(joueur.getCroiseurList().get(croiseurpose).coord, joueur.arraylist) ==false)
 						{
-							joueur.g1.placement(joueur.croiseurList.get(croiseurpose).coord,joueur.croiseurList.get(croiseurpose).getName());
+							joueur.g1.placement(joueur.getCroiseurList().get(croiseurpose).coord,joueur.getCroiseurList().get(croiseurpose).getName());
 							joueur.g1.affiche();
-							joueur.Boats.put(joueur.croiseurList.get(croiseurpose).getName(),joueur.croiseurList.get(croiseurpose) );
+							joueur.Boats.put(joueur.getCroiseurList().get(croiseurpose).getName(),joueur.getCroiseurList().get(croiseurpose) );
 							bateaupose ++;
 							croiseurpose++;
 							break;
 						}
 						else {
 							System.out.println("coordoné non valide pour " +croiseurname +" nouvel coordonées :" );
-							joueur.croiseurList.set(croiseurpose, new croiseur(croiseurname));
-							joueur.set(bateaupose,joueur.croiseurList.get(croiseurpose).coord);
+							joueur.getCroiseurList().set(croiseurpose, new croiseur(croiseurname));
+							joueur.set(bateaupose,joueur.getCroiseurList().get(croiseurpose).coord);
 						}
 						
 					}
@@ -129,9 +133,34 @@ public class Placegrille {
 		break; 			
 			
 		case 4 : 
-		
+			if (cuirasseposee <= nbcuirasse)
+			{
+				joueur.getCuirasseList().add(new cuirasse(cuirassename));	
+				joueur.ajouter(joueur.getCuirasseList().get(cuirasseposee).coord);
+				for ( cuirasse i : joueur.getCuirasseList() )
+				{
+					while (true) {
+						if (Testplacement.isPlacementok(joueur.getCuirasseList().get(cuirasseposee).coord, joueur.arraylist) ==false)
+						{
+							joueur.g1.placement(joueur.getCuirasseList().get(cuirasseposee).coord,joueur.getCuirasseList().get(cuirasseposee).getName());
+							joueur.g1.affiche();
+							joueur.Boats.put(joueur.getCuirasseList().get(cuirasseposee).getName(),joueur.getCuirasseList().get(cuirasseposee) );
+							bateaupose ++;
+							cuirasseposee++;
+							break;
+						}
+						else {
+							System.out.println("coordoné non valide pour " +cuirassename +" nouvel coordonées :" );
+							joueur.getCuirasseList().set(croiseurpose, new cuirasse(cuirassename));
+							joueur.set(bateaupose,joueur.getCuirasseList().get(cuirasseposee).coord);
+						}
+						
+					}
+					break;
+				}
+		}		
+		break; 			
 			
-			break;
 }
 
 	

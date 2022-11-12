@@ -16,6 +16,11 @@ public class quigagne {
 			{
 				monscore += 1;
 			}
+		for (croiseur a : joueur.getCroiseurList())
+			if (a.getvie() == 0)
+			{
+				monscore += 1;
+			}
 		return monscore;	
 	}
 	

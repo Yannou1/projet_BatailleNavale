@@ -29,6 +29,7 @@ public class croiseur extends Bateau {
 
 
 	@Override
+	public
 	int VieBateau(int toucher) {
 		this.vie = vie - toucher;
 		return vie;

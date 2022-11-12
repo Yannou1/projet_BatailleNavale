@@ -4,8 +4,9 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import modele.Testplacement;
+
 import modele.croiseur;
+import modele.cuirasse;
 import modele.destroyer;
 import modele.sousmarin;
 
@@ -49,12 +50,21 @@ public class action
 					hit= new Point[5];
 					hit = bateautouche.isboathit(a.attaque, joueur2.arraylist, a.gettaille());
 				}
+				if (iscuirasse(object, joueur) == true)
+				{
+					cuirasse a = objectTocuirasse(object, joueur);
+					 a.Puissancetire(); 
+					hit= new Point[5];
+					hit = bateautouche.isboathit(a.attaque, joueur2.arraylist, a.gettaille());
+				}
+				
+				
 				// -------------------------------------------------------------
 					test =false;
 				for (Point i :hit)
 				{
 					if ( i ==null)
-						break;
+						continue;
 					else 
 					{
 						ArrayList<String> toucher = new ArrayList<String>();
@@ -66,8 +76,23 @@ public class action
 								Object p= joueur2.Boats.get(b);
 								if (isdestr(p, joueur2) == true)
 								{
-									joueur2.g1.placement(hit, "X");
+									joueur2.g1.placement(hit, "_X_");
+									joueur.g2.placement(hit, "_X_");
 									destroyer c  = objecttodestroy(p, joueur2);
+									c.VieBateau(1);	
+								}
+								if (iscroiseur(p, joueur2) == true)
+								{
+									joueur2.g1.placement(hit, "_X_");
+									joueur.g2.placement(hit, "_X_");
+									
+									croiseur c  = objectTocroiseur(p, joueur2);
+									c.VieBateau(1);	
+								}if (iscroiseur(p, joueur2) == true)
+								{
+									joueur2.g1.placement(hit, "_X_");
+									joueur.g2.placement(hit, "_X_");
+									croiseur c  = objectTocroiseur(p, joueur2);
 									c.VieBateau(1);	
 								}
 							}
@@ -82,14 +107,23 @@ public class action
 									Object p= joueur2.Boats.get(b);
 									if (isdestr(p, joueur2) == true)
 									{
-										joueur2.g1.placement(hit, "X");
+										joueur2.g1.placement(hit, "_X_");
+										joueur.g2.placement(hit, "_X_");
 										destroyer c  = objecttodestroy(p, joueur2);
 										c.VieBateau(1);	
 									}
 									if (isSmarin(p, joueur2) == true)
 									{
-										joueur2.g1.placement(hit, "X");
+										joueur2.g1.placement(hit, "_X_");
+										joueur.g2.placement(hit, "_X_");
 										sousmarin c  = objectTodsousM(p, joueur2);
+										c.VieBateau(1);	
+									}
+									if (iscroiseur(p, joueur2) == true)
+									{
+										joueur2.g1.placement(hit, "_X_");
+										joueur.g2.placement(hit, "_X_");
+										croiseur c  = objectTocroiseur(p, joueur2);
 										c.VieBateau(1);	
 									}
 								}
@@ -103,21 +137,59 @@ public class action
 				
 				if (isdestr(object, joueur) == true ) 
 				{
+					
 					destroyer a = objecttodestroy(object, joueur);
+					if (a.getvie() != a.gettaille())
+					{
+						System.out.println("impossible de déplacer le bateau");
+						break;
+					}
+					else
 					mouvement.destroyermluvement(a, joueur);
 					test =false;
 				}
 				
 				if (isSmarin(object, joueur) == true ) 
 				{
+
 					sousmarin a = objectTodsousM(object, joueur);
+					if (a.getvie() != a.gettaille())
+					{
+						System.out.println("impossible de déplacer le bateau");
+						break;
+					}
 					mouvement.sousmarinrmouvement(a, joueur);
 					test =false;
 					}
 				
+				if (iscroiseur(object, joueur) == true)
+				{
+					
+					croiseur a = objectTocroiseur(object, joueur);
+					if (a.getvie() != a.gettaille())
+					{
+						System.out.println("impossible de déplacer le bateau");
+						break;
+					}
+					mouvement.croiseurmouvement(a, joueur);
+					test =false;
 				
+				}
+				if (iscuirasse(object, joueur) == true)
+				{
+					
+					cuirasse a = objectTocuirasse(object, joueur);
+					if (a.getvie() != a.gettaille())
+					{
+						System.out.println("impossible de déplacer le bateau");
+						break;
+					}
+					mouvement.cuirassermouvement(a, joueur);
+					test =false;
+				
+				}
 			}
-			}
+		}
 	}
 		
 
@@ -142,7 +214,14 @@ public class action
 	}
 	
 	static croiseur objectTocroiseur(Object object, Joueur joueur) {
-		for(croiseur i:  joueur.croiseurList) {
+		for(croiseur i:  joueur.getCroiseurList()) {
+			if (object == i)
+				return i;
+		}
+		return null;
+	}
+	static cuirasse objectTocuirasse(Object object, Joueur joueur) {
+		for(cuirasse i:  joueur.getCuirasseList()) {
 			if (object == i)
 				return i;
 		}
@@ -177,6 +256,15 @@ public class action
 	static boolean isSmarin(Object object, Joueur joueur) 
 	{
 		if (objectTodsousM(object, joueur)!=null)
+			return true;
+		else
+		return false;
+		
+	}
+	
+	static boolean iscuirasse(Object object, Joueur joueur) 
+	{
+		if (objectTocuirasse(object, joueur)!=null)
 			return true;
 		else
 		return false;

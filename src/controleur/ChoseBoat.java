@@ -18,6 +18,7 @@ public class ChoseBoat {
 			Object a = joueur.Boats.get(choix);
 			}
 		 action.quelactiondest(joueur.Boats.get(choix),joueur, joueur2);
+		 
 		}
 	}
 

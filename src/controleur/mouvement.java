@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.util.Scanner;
 
 import modele.Testplacement;
+import modele.croiseur;
+import modele.cuirasse;
 import modele.destroyer;
 import modele.sousmarin;
 
@@ -118,6 +120,119 @@ public class mouvement {
 		 
 	}
 	
+	static void cuirassermouvement(cuirasse a, Joueur joueur)
+	{
+		boolean test = true;
+		while (test == true)
+		{
+			System.out.println(" ou voulez-vous aller");
+			System.out.println(" (1) arriere");
+			System.out.println(" (2) avant");
+			Scanner sc1 = new Scanner(System.in);
+			int where = sc1.nextInt();
+			Point[] newcoord ;
+			newcoord = new Point[3];
+			Point[] tmpcoord;
+			tmpcoord = new Point[3];
+			tmpcoord = a.coord;
+			newcoord=  coorddepl.newcoord(a.coord,joueur, a.gettaille(), a.sense, where);
+			for (Point [] i : joueur.arraylist)
+			{
+				if ( i == a.coord) 
+				{
+					int index = joueur.arraylist.indexOf(i);
+					joueur.arraylist.set(index, newcoord) ;
+					a.coord =newcoord;
+				}
+			}
+			if (a.sense== 1 || a.sense ==2) 
+			 {
+				 switch (where)
+				 {
+					 case 1 : // 
+						 test = actiondeplCuirrasse(joueur,a,newcoord,tmpcoord );
+							break;	
+					 case 2 :
+						// meme que en haut mais on vas dans l'autre sens  
+						 
+						 test = actiondeplCuirrasse(joueur,a,newcoord,tmpcoord );
+							break;
+				 }
+			 } 
+			 if (a.sense== 3 || a.sense ==4) 
+			 {
+				 switch (where)
+				 {
+					 case 1 : // 
+						test = actiondeplCuirrasse(joueur,a,newcoord,tmpcoord );
+							break;
+					 case 2 :
+						// meme que en haut mais on vas dans l'autre sens  
+						 test = actiondeplCuirrasse(joueur,a,newcoord,tmpcoord );
+						 break;
+				 }
+			 }
+		}
+		 
+	}
+	
+	static void croiseurmouvement(croiseur a, Joueur joueur)
+	{
+		boolean test = true;
+		while (test == true)
+		{
+			System.out.println(" ou voulez-vous aller");
+			System.out.println(" (1) arriere");
+			System.out.println(" (2) avant");
+			Scanner sc1 = new Scanner(System.in);
+			int where = sc1.nextInt();
+			Point[] newcoord ;
+			newcoord = new Point[3];
+			Point[] tmpcoord;
+			tmpcoord = new Point[3];
+			tmpcoord = a.coord;
+			newcoord=  coorddepl.newcoord(a.coord,joueur, a.gettaille(), a.sense, where);
+			for (Point [] i : joueur.arraylist)
+			{
+				if ( i == a.coord) 
+				{
+					int index = joueur.arraylist.indexOf(i);
+					joueur.arraylist.set(index, newcoord) ;
+					a.coord =newcoord;
+				}
+			}
+			if (a.sense== 1 || a.sense ==2) 
+			 {
+				 switch (where)
+				 {
+					 case 1 : // 
+						 test = actiondeplcroiseur(joueur,a,newcoord,tmpcoord );
+							break;	
+					 case 2 :
+						// meme que en haut mais on vas dans l'autre sens  
+						 
+						 test = actiondeplcroiseur(joueur,a,newcoord,tmpcoord );
+							break;
+				 }
+			 } 
+			 if (a.sense== 3 || a.sense ==4) 
+			 {
+				 switch (where)
+				 {
+					 case 1 : // 
+						test = actiondeplcroiseur(joueur,a,newcoord,tmpcoord );
+							break;
+					 case 2 :
+						// meme que en haut mais on vas dans l'autre sens  
+						 test = actiondeplcroiseur(joueur,a,newcoord,tmpcoord );
+						 break;
+				 }
+			 }
+		}
+		 
+	}
+	
+	
 //_____________________________________________________________________________________________________________________________________________________________
 	
 	static boolean actiondeplSmarin(Joueur joueur, sousmarin a, Point [] newcoord, Point [] tmpcoord) {
@@ -173,10 +288,58 @@ public class mouvement {
 	
 	
 	
+
+
+static boolean actiondeplcroiseur(Joueur joueur, croiseur a, Point [] newcoord, Point [] tmpcoord) {
+	if (Testplacement.isPlacementok(newcoord, joueur.arraylist) == false )
+	{
+		joueur.g1.placement(tmpcoord, null);
+		joueur.g1.placement(newcoord, a.getName());
+		joueur.g1.affiche();
+	return false;
+		
+	}
+	else
+		for (Point [] i : joueur.arraylist)
+		{
+			if ( i == a.coord) 
+			{
+				int index = joueur.arraylist.indexOf(i);
+				joueur.arraylist.set(index, tmpcoord) ;
+				a.coord = tmpcoord;
+			}
+		}
+			System.out.println("Erreur"); 
+			return true;
+	
+}
+
+static boolean actiondeplCuirrasse(Joueur joueur, cuirasse a, Point [] newcoord, Point [] tmpcoord) {
+	if (Testplacement.isPlacementok(newcoord, joueur.arraylist) == false )
+	{
+		joueur.g1.placement(tmpcoord, null);
+		joueur.g1.placement(newcoord, a.getName());
+		joueur.g1.affiche();
+	return false;
+		
+	}
+	else
+		for (Point [] i : joueur.arraylist)
+		{
+			if ( i == a.coord) 
+			{
+				int index = joueur.arraylist.indexOf(i);
+				joueur.arraylist.set(index, tmpcoord) ;
+				a.coord = tmpcoord;
+			}
+		}
+			System.out.println("Erreur"); 
+			return true;
+	
 }
 
 
-
+}
 
 
 

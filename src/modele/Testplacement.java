@@ -24,13 +24,13 @@ public class Testplacement {
 						{	
 							if (i.equals(j)) 
 							{
-								System.out.println("Les tableaux sont égaux");
+								System.out.println("un bateau et ici");
 								System.out.println(i);
 								return true;
 							}
 							else 
 							{
-								System.out.println("Les tableaux ne sont pas égaux.");
+								continue;
 							}	
 						}
 					} 

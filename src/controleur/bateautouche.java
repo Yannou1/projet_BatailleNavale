@@ -13,7 +13,7 @@ public class bateautouche {
  static ArrayList<String> BatKey;
 	 static Point[] isboathit(Point[] attaque,ArrayList<Point[]> tousBat, int taille )
 	{ 
-	toucher = new Point[taille];
+	toucher = new Point[20];
 	int indice =0;
 	for (Point i :attaque ) 
 	{
@@ -44,7 +44,7 @@ public class bateautouche {
 	for (Point point : att)
 	{
 		if (point ==null) {
-			return BatKey;
+			continue;
 		}
 		else 
 		{
