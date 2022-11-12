@@ -30,8 +30,12 @@ Placegrille.PLaceGrille(joueur2);
 	ChoseBoat.choseBoat(joueur1, joueur2);
 	ChoseBoat.choseBoat(joueur2, joueur1);
 	//System.out.println(joueur1.getDestroyerList().get(0).getvie());
+	System.out.println("J2 G1");
 	joueur2.g1.affiche();
+	System.out.println("J1 G2");
 	joueur1.g2.affiche();
+	System.out.println("J1 G1");
+	joueur1.g1.affiche();
 	
 }
 }

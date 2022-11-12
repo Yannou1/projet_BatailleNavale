@@ -31,7 +31,7 @@ public class Placegrille {
 		System.out.println("taper (1) destroyer ");
 		System.out.println("taper (2) sous-marin");
 		System.out.println("taper (3) croiseur");
-		System.out.println("taper (4) quiter");
+		System.out.println("taper (4) cuirasse");
 		System.out.println("que faire ? :");
 		
 		int choix = sc.nextInt();

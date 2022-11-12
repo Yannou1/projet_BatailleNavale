@@ -53,15 +53,11 @@ public void affiche() {
 			System.out.print("|___");
 		
 			}
-			else {
+			else
+			{
 				
 				System.out.print( "|" + grille [i] [j]  );
-				
 			}
-			
-			
-			
-			
 			
 		}
 		
