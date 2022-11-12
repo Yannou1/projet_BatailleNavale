@@ -1,24 +1,25 @@
 package modele;
 
-public class croiseur extends bateau {
+public class croiseur extends Bateau {
 
 	
+	croiseur(String name, int taille) {
+		super(name, taille);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	@Override
-	int Taillebateau() {
+	int VieBateau(int tt) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
-	int Puissancetire() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
-	int VieBateau() {
+	public void Puissancetire() {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 }

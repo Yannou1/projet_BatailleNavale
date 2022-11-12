@@ -35,7 +35,7 @@ public class Placegrille {
 		
 		int choix = sc.nextInt();
 		if (choix <0) System.out.println("non-valide");
-		String destroyername = "d" + Integer.toString(joueur.destroyerList.size()+1);
+		String destroyername = "d" + Integer.toString(joueur.getDestroyerList().size()+1);
 		String Smarinname = "S" + Integer.toString(joueur.SmarinList.size()+1);
 		
 		switch(choix)
@@ -44,24 +44,24 @@ public class Placegrille {
 		case 1:
 			if (destpose <= nbDest)
 			{
-				joueur.destroyerList.add(new destroyer(destroyername));
-				joueur.ajouter(joueur.destroyerList.get(destpose).coord);
-				for ( destroyer i : joueur.destroyerList )
+				joueur.getDestroyerList().add(new destroyer(destroyername));
+				joueur.ajouter(joueur.getDestroyerList().get(destpose).coord);
+				for ( destroyer i : joueur.getDestroyerList() )
 				{
 					while (true) {
-						if (Testplacement.isPlacementok(joueur.destroyerList.get(destpose).coord, joueur.arraylist) ==false)
+						if (Testplacement.isPlacementok(joueur.getDestroyerList().get(destpose).coord, joueur.arraylist) ==false)
 						{
-							joueur.g1.placement(joueur.destroyerList.get(destpose).coord,joueur.destroyerList.get(destpose).getName());
+							joueur.g1.placement(joueur.getDestroyerList().get(destpose).coord,joueur.getDestroyerList().get(destpose).getName());
 							joueur.g1.affiche();
-							joueur.Boats.put(joueur.destroyerList.get(destpose).getName(),joueur.destroyerList.get(destpose) );
+							joueur.Boats.put(joueur.getDestroyerList().get(destpose).getName(),joueur.getDestroyerList().get(destpose) );
 							bateaupose ++;
 							destpose++;
 							break;
 						}
 						else {
 							System.out.println("coordoné non valide pour " +destroyername +" nouvel coordonées :" );
-							joueur.destroyerList.set(destpose, new destroyer(destroyername));
-							joueur.set(bateaupose,joueur.destroyerList.get(destpose).coord);
+							joueur.getDestroyerList().set(destpose, new destroyer(destroyername));
+							joueur.set(bateaupose,joueur.getDestroyerList().get(destpose).coord);
 						}
 					}
 					break;

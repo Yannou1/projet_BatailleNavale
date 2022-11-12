@@ -5,8 +5,11 @@ import java.util.ArrayList;
 
 public class Testplacement {
 	
-	public static boolean boathere(ArrayList<Point[]> Mesbateaux ) 
+	public static boolean boathere( ArrayList<Point[]> Mesbateaux ) 
 	{
+		
+	
+
 		for(int p= 0; p < Mesbateaux.size(); p++ )	
 		{
 			for(Point j : Mesbateaux.get(p))
@@ -16,6 +19,7 @@ public class Testplacement {
 				{
 					if (l!=p)
 					{
+					
 						for(Point i : Mesbateaux.get(l)) 
 						{	
 							if (i.equals(j)) 
@@ -48,12 +52,26 @@ public class Testplacement {
 		{
 			int coordX = (int) i.getX();
 			int coordY = (int) i.getY();
-			if (coordX >15 || coordX < 1  || coordY > 15 || coordX < 1 ) 
+			if ((coordX >15 | coordX < 1) ) 
+			{
 				value = true;
-			else 
-				value = false;	
-		}
-		
+				break;
+			}
+				else 
+				{
+					value = false;	
+				}
+			if(coordX >15 | coordY < 1) 
+			{
+				value = true;
+				break;
+			}
+				else 
+				{
+					value = false;	
+				}
+			
+			}
 	return value;
 	}
 	

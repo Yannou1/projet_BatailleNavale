@@ -7,29 +7,79 @@ public class coorddepl {
 	private static Point[] NewCoord;
 
 
-	static Point[] newcoord(Point[] ancienCoord, Joueur joueur, int taille) 
+	static Point[] newcoord(Point[] ancienCoord, Joueur joueur, int taille, int sens, int choix ) 
 	{
-		int indice =0;
-		NewCoord = new Point[3];
-		for (Point i : ancienCoord) 
+		
+	if (sens == 1 || sens ==2)
+	{
+		if (choix == 1)
 		{
-			int X = (int) i.getX();
-			int Y = (int) i.getY();
-			X++;
-			Point p1 = new Point(X,Y);
-			NewCoord[indice] = p1;
-			indice ++;	
-		}
-		for (Point [] i : joueur.arraylist)
-		{
-			if ( i == ancienCoord) 
+			int indice =0;
+			NewCoord = new Point[taille];
+			for (Point i : ancienCoord) 
 			{
-				int index = joueur.arraylist.indexOf(i);
-				joueur.arraylist.set(index, NewCoord) ;
+				int X = (int) i.getX();
+				int Y = (int) i.getY();
+				X++;
+				Point p1 = new Point(X,Y);
+				NewCoord[indice] = p1;
+				indice ++;	
 			}
-			else 
-				continue;
 		}
+	
+		
+		if (choix == 2)
+		{
+			int indice =0;
+			NewCoord = new Point[taille];
+			for (Point i : ancienCoord) 
+			{
+				int X = (int) i.getX();
+				int Y = (int) i.getY();
+				X--;
+				Point p1 = new Point(X,Y);
+				NewCoord[indice] = p1;
+				indice ++;	
+			}
+			
+		}	
+	}
+	
+	
+	if (sens == 3 || sens ==4)
+	{
+		if (choix == 1)
+		{
+			int indice =0;
+			NewCoord = new Point[taille];
+			for (Point i : ancienCoord) 
+			{
+				int X = (int) i.getX();
+				int Y = (int) i.getY();
+				Y++;
+				Point p1 = new Point(X,Y);
+				NewCoord[indice] = p1;
+				indice ++;	
+			}
+		}
+	
+		
+		if (choix == 2)
+		{
+			int indice =0;
+			NewCoord = new Point[taille];
+			for (Point i : ancienCoord) 
+			{
+				int X = (int) i.getX();
+				int Y = (int) i.getY();
+				Y--;
+				Point p1 = new Point(X,Y);
+				NewCoord[indice] = p1;
+				indice ++;	
+			}
+			
+		}	
+	}	
 		return NewCoord;
 	}
 }

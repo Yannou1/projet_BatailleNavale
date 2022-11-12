@@ -2,6 +2,8 @@ package controleur;
 
 import java.awt.Point;
 import java.util.Scanner;
+
+import modele.Testplacement;
 import modele.destroyer;
 import modele.sousmarin;
 
@@ -53,12 +55,12 @@ public class action
 							for (String b : toucher) 	
 							{
 								Object p= joueur2.Boats.get(b);
-									if (isdestr(p, joueur2) == true)
-									{
+								if (isdestr(p, joueur2) == true)
+								{
 									joueur2.g1.placement(hit, "X");
 									destroyer c  = objecttodestroy(p, joueur2);
 									c.VieBateau(1);	
-									}
+								}
 							}
 						}
 							
@@ -93,47 +95,29 @@ public class action
 				if (isdestr(object, joueur) == true ) 
 				{
 					destroyer a = objecttodestroy(object, joueur);
-						int SensDestr= a.sense;
-						if (SensDestr== 1 || SensDestr ==2) {
-							joueur.g1.placement(a.coord, null);
-							joueur.g1.placement(coorddepl.newcoord(a.coord,joueur, a.gettaille()), a.getName());
-							joueur.g1.affiche();
-							}
+					mouvement.destroyermluvement(a, joueur);
+					test =false;
 				}
+				
 				if (isSmarin(object, joueur) == true ) 
 				{
-					sousmarin a1 = objectTodsousM(object, joueur);
-					int sensSm= a1.sense;
-					if (sensSm == 1 || sensSm ==2) 
-					{
-						joueur.g1.placement(a1.coord, null);
-						joueur.g1.placement(coorddepl.newcoord(a1.coord, joueur, a1.gettaille()), a1.getName());
-						joueur.g1.affiche();
+					sousmarin a = objectTodsousM(object, joueur);
+					mouvement.sousmarinrmouvement(a, joueur);
+					test =false;
 					}
-				}
-				break;
+				
+				
 			}
-		}
+			}
 	}
-			
 		
 
-
-
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	static destroyer objecttodestroy(Object object,Joueur joueur) {
 
 
-		for(destroyer i :  joueur.destroyerList) {
+		for(destroyer i :  joueur.getDestroyerList()) {
 			if (object == i)
 				return i;
 		}

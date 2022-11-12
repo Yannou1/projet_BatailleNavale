@@ -11,7 +11,7 @@ import vue.grille;
 public class Joueur {
 	public ArrayList<Point[]> arraylist;
 	public  HashMap<String, Object> Boats;
-	 ArrayList<destroyer> destroyerList ;
+	 private ArrayList<destroyer> destroyerList ;
 	 ArrayList<sousmarin> SmarinList  ;
 	 public grille g1;
 	 
@@ -36,6 +36,12 @@ public void set(int index, Point[] coord) {
 	
 }
 
+public ArrayList<destroyer> getDestroyerList() {
+	return destroyerList;
+}
+public ArrayList<sousmarin> getSmarinList() {
+	return SmarinList;
+}
 
 }
 
