@@ -23,9 +23,8 @@ public class ClcPts {
 		coord[0] =  p1;
 		if (taille != 1)
 		{
-		for (int i=1; i<= 2; i++) 
+		for (int i=1; i<= taille-1; i++) 
 		{
-			
 			if (sens == DROITE) 
 			{
 				coord[i] =new Point(coordX+i, coordY );	
@@ -37,14 +36,11 @@ public class ClcPts {
 			}
 			if (sens == HAUT)
 			{
-					
 					 coord[i] = new Point(coordX, coordY -i); ;
 					 
 			}
 			if (sens == BAS) 
 			{
-				
-				
 					coord[i] = new Point(coordX, coordY+i ); ;
 				
 			}

@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import modele.croiseur;
 import modele.destroyer;
 import modele.sousmarin;
 import vue.grille;
@@ -13,6 +14,7 @@ public class Joueur {
 	public  HashMap<String, Object> Boats;
 	 private ArrayList<destroyer> destroyerList ;
 	 ArrayList<sousmarin> SmarinList  ;
+	 ArrayList<croiseur> croiseurList;
 	 public grille g1;
 	 
 	
@@ -23,6 +25,7 @@ Joueur(String name) {
 	 Boats = new HashMap<String, Object>();
 	 destroyerList = new ArrayList<destroyer>();
 	 SmarinList = new ArrayList<sousmarin>() ; 
+	 croiseurList = new ArrayList<croiseur>() ;
 }
 
 public void ajouter(Point[] new_object) 

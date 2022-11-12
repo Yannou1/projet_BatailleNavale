@@ -1,9 +1,11 @@
 package controleur;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import modele.Testplacement;
+import modele.croiseur;
 import modele.destroyer;
 import modele.sousmarin;
 
@@ -30,7 +32,7 @@ public class action
 					destroyer a = objecttodestroy(object, joueur);
 					  a.Puissancetire(); 
 						hit= new Point[1];
-						hit = bateautouche.isboathit(a.attaque, joueur2.arraylist);
+						hit = bateautouche.isboathit(a.attaque, joueur2.arraylist, a.gettaille());
 						test =false;
 				}
 				if (isSmarin(object, joueur) == true)
@@ -38,7 +40,14 @@ public class action
 					sousmarin a = objectTodsousM(object, joueur);
 					 a.Puissancetire(); 
 					hit= new Point[1];
-					hit = bateautouche.isboathit(a.attaque, joueur2.arraylist);
+					hit = bateautouche.isboathit(a.attaque, joueur2.arraylist, a.gettaille());
+				}
+				if (iscroiseur(object, joueur) == true)
+				{
+					croiseur a = objectTocroiseur(object, joueur);
+					 a.Puissancetire(); 
+					hit= new Point[5];
+					hit = bateautouche.isboathit(a.attaque, joueur2.arraylist, a.gettaille());
 				}
 				// -------------------------------------------------------------
 					test =false;
@@ -48,10 +57,10 @@ public class action
 						break;
 					else 
 					{
-						String[] toucher= bateautouche.whichboat(hit, joueur2);
+						ArrayList<String> toucher = new ArrayList<String>();
+						toucher=bateautouche.whichboat(hit, joueur2);
 						if ( isSmarin(object, joueur) == false)
 						{
-							
 							for (String b : toucher) 	
 							{
 								Object p= joueur2.Boats.get(b);
@@ -131,6 +140,16 @@ public class action
 		}
 		return null;
 	}
+	
+	static croiseur objectTocroiseur(Object object, Joueur joueur) {
+		for(croiseur i:  joueur.croiseurList) {
+			if (object == i)
+				return i;
+		}
+		return null;
+	}
+	
+	
 
 	
 	static boolean isdestr(Object object, Joueur joueur ) 
@@ -142,6 +161,18 @@ public class action
 		return false;
 		
 	}
+	
+	static boolean iscroiseur(Object object, Joueur joueur ) 
+	{
+		if (objectTocroiseur(object, joueur)!=null)
+			return true;
+		else
+			return false;
+		
+	}
+	
+	
+	
 	
 	static boolean isSmarin(Object object, Joueur joueur) 
 	{

@@ -4,6 +4,7 @@ package controleur;
 import java.util.ArrayList;
 import java.util.Scanner;
 import modele.Testplacement;
+import modele.croiseur;
 import modele.destroyer;
 import modele.sousmarin;
 
@@ -13,23 +14,20 @@ public class Placegrille {
 		final int nbBateau =1;
 		final int nbSmarin =1;
 		final int nbDest =3;
+		final int nbcroiseur =1;
 		int destpose =0;
 		int Smarinpose =0;
 		int bateaupose = 0;
-		
-	
-		
-		 
-		
+		int croiseurpose = 0;
 		
 		
 		
 	while( bateaupose < nbBateau )
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("taper (1) destroyer 1 ");
-		System.out.println("taper (2) destroyer 2");
-		System.out.println("taper (3) destroyer 3 ");
+		System.out.println("taper (1) destroyer ");
+		System.out.println("taper (2) sous-marin");
+		System.out.println("taper (3) croiseur");
 		System.out.println("taper (4) quiter");
 		System.out.println("que faire ? :");
 		
@@ -37,6 +35,7 @@ public class Placegrille {
 		if (choix <0) System.out.println("non-valide");
 		String destroyername = "d" + Integer.toString(joueur.getDestroyerList().size()+1);
 		String Smarinname = "S" + Integer.toString(joueur.SmarinList.size()+1);
+		String croiseurname = "C" + Integer.toString(joueur.croiseurList.size()+1);
 		
 		switch(choix)
 		{
@@ -101,8 +100,34 @@ public class Placegrille {
 		break; 
 		
 		case 3 :
+			if (croiseurpose <= nbcroiseur)
+			{
+				joueur.croiseurList.add(new croiseur(croiseurname));	
+				joueur.ajouter(joueur.croiseurList.get(croiseurpose).coord);
+				for ( croiseur i : joueur.croiseurList )
+				{
+					while (true) {
+						if (Testplacement.isPlacementok(joueur.croiseurList.get(croiseurpose).coord, joueur.arraylist) ==false)
+						{
+							joueur.g1.placement(joueur.croiseurList.get(croiseurpose).coord,joueur.croiseurList.get(croiseurpose).getName());
+							joueur.g1.affiche();
+							joueur.Boats.put(joueur.croiseurList.get(croiseurpose).getName(),joueur.croiseurList.get(croiseurpose) );
+							bateaupose ++;
+							croiseurpose++;
+							break;
+						}
+						else {
+							System.out.println("coordoné non valide pour " +croiseurname +" nouvel coordonées :" );
+							joueur.croiseurList.set(croiseurpose, new croiseur(croiseurname));
+							joueur.set(bateaupose,joueur.croiseurList.get(croiseurpose).coord);
+						}
+						
+					}
+					break;
+				}
+		}		
+		break; 			
 			
-			break;
 		case 4 : 
 		
 			

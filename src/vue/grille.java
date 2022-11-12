@@ -25,9 +25,13 @@ public class grille {
 
 public void placement (Point[] BatCoord, String name) {
 	for (Point i : BatCoord) {
+		if ( i != null)
+		{
 		int X= (int) i.getX();
 		int Y= (int) i.getY();
 		grille [X-1] [Y-1] = name;	
+		}
+		else break;
 		
 	}
 			

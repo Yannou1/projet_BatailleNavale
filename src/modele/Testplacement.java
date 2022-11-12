@@ -61,7 +61,7 @@ public class Testplacement {
 				{
 					value = false;	
 				}
-			if(coordX >15 | coordY < 1) 
+			if(coordY >15 | coordY < 1) 
 			{
 				value = true;
 				break;
