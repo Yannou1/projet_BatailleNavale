@@ -4,15 +4,28 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+import modele.Joueur;
 import modele.croiseur;
 import modele.cuirasse;
 import modele.destroyer;
 import modele.sousmarin;
-
+/**
+ * permet de avoir quelle action effectué pour un bateau
+ * @author Yanis
+ *
+ */
 public class action
 {
 	static Point[] hit;
+	/**
+	 * permet de savoir quelle action va être faite entre tirer et bouger 
+	 * @param object
+	 * le bateau contenu dans la hashmap 
+	 * @param joueur
+	 * le joueur 
+	 * @param joueur2
+	 * le joueur 2
+	 */
 	public static void quelactiondest(Object object, Joueur joueur, Joueur joueur2) 
 	{
 		System.out.println(object);
@@ -145,7 +158,7 @@ public class action
 						break;
 					}
 					else
-					mouvement.destroyermluvement(a, joueur);
+					mouvement.destroyermouvement(a, joueur);
 					test =false;
 				}
 				
@@ -194,7 +207,15 @@ public class action
 		
 
 	
-	
+	/**
+	 * convertit l'objet retourner par la Hashmap en destroyer
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * retourne l'objet convertit en destroyer
+	 */
 	static destroyer objecttodestroy(Object object,Joueur joueur) {
 
 
@@ -204,15 +225,31 @@ public class action
 		}
 		return null;
 	}
-	
+	/**
+	 * convertit l'objet retourner par la Hashmap en sousmarin
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * retourne l'objet convertit en dsousmarin
+	 */
 	static sousmarin objectTodsousM(Object object, Joueur joueur) {
-		for(sousmarin i:  joueur.SmarinList) {
+		for(sousmarin i:  joueur.getSmarinList()) {
 			if (object == i)
 				return i;
 		}
 		return null;
 	}
-	
+	/**
+	 * convertit l'objet retourner par la Hashmap en croiseur
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * retourne l'objet convertit en croiseur
+	 */
 	static croiseur objectTocroiseur(Object object, Joueur joueur) {
 		for(croiseur i:  joueur.getCroiseurList()) {
 			if (object == i)
@@ -220,6 +257,15 @@ public class action
 		}
 		return null;
 	}
+	/**
+	 * convertit l'objet retourner par la Hashmap en cuirassé
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * retourne l'objet convertit en cuirassé
+	 */
 	static cuirasse objectTocuirasse(Object object, Joueur joueur) {
 		for(cuirasse i:  joueur.getCuirasseList()) {
 			if (object == i)
@@ -230,7 +276,15 @@ public class action
 	
 	
 
-	
+	/**
+	 * vérifie si l'objet retourner par la Hashmap est un destroyer
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * un boléen 
+	 */
 	static boolean isdestr(Object object, Joueur joueur ) 
 	{
 		
@@ -240,7 +294,15 @@ public class action
 		return false;
 		
 	}
-	
+	/**
+	 * vérifie si l'objet retourner par la Hashmap est un croiseur
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * un boléen 
+	 */
 	static boolean iscroiseur(Object object, Joueur joueur ) 
 	{
 		if (objectTocroiseur(object, joueur)!=null)
@@ -251,7 +313,15 @@ public class action
 	}
 	
 	
-	
+	/**
+	 * vérifie si l'objet retourner par la Hashmap est un sousmarin
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * un boléen 
+	 */
 	
 	static boolean isSmarin(Object object, Joueur joueur) 
 	{
@@ -261,7 +331,15 @@ public class action
 		return false;
 		
 	}
-	
+	/**
+	 * vérifie si l'objet retourner par la Hashmap est un cuirassé
+	 * @param object
+	 * l'objet retourner par la Hasmap
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 * @return
+	 * un boléen 
+	 */
 	static boolean iscuirasse(Object object, Joueur joueur) 
 	{
 		if (objectTocuirasse(object, joueur)!=null)

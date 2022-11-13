@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"projet_BatailleNavale"}];updateSearchResults();
+moduleSearchIndex = [];updateSearchResults();

@@ -2,7 +2,11 @@ package modele;
 
 import java.awt.Point;
 import java.util.Scanner;
-
+/**
+ * Croiseur 
+ * @author Yanis
+ *
+ */
 public class croiseur extends Bateau {
 	public int sense;
 	public int coordX;
@@ -13,7 +17,11 @@ public class croiseur extends Bateau {
 	private final static int taille = 5;
 	destroyer destroyer ;
 	
-	
+	/**
+	 * contruit un croiseur 
+	 * @param name
+	 * du nom du croiseur (cr+nombre)
+	 */
 	public croiseur(String name) {
 		super(name, taille);
 		this.coord = new Point [taille];

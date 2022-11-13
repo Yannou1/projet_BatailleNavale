@@ -3,15 +3,27 @@ package controleur;
 import java.awt.Point;
 import java.util.Scanner;
 
+import modele.Joueur;
 import modele.Testplacement;
 import modele.croiseur;
 import modele.cuirasse;
 import modele.destroyer;
 import modele.sousmarin;
-
+/**
+ * classe qui permet de deplacer chaque type de bateau
+ * @author Yanis
+ *
+ */
 public class mouvement {
+	/**
+	 * classe qui permet de deplacer les destroyer
+	 * @param a
+	 * represente le type bateau séléctionner
+	 * @param joueur 
+	 * est le joueur a qui appartient le bateau
+	 */
+	static public void destroyermouvement(destroyer a, Joueur joueur)
 	
-	static void destroyermluvement(destroyer a, Joueur joueur)
 	{
 		boolean test = true;
 		while (test == true)
@@ -63,7 +75,13 @@ public class mouvement {
 			 }
 		} 
 	}
-	
+	/**
+	 * classe qui permet de deplacer les sousmarin
+	 * @param a
+	 * represente le type bateau séléctionner
+	 * @param joueur 
+	 * est le joueur a qui appartient le bateau
+	 */
 	static void sousmarinrmouvement(sousmarin a, Joueur joueur)
 	{
 		boolean test = true;
@@ -119,7 +137,13 @@ public class mouvement {
 		}
 		 
 	}
-	
+	/**
+	 * classe qui permet de deplacer les cuirassées 
+	 * @param a
+	 * represente le type bateau séléctionner
+	 * @param joueur 
+	 * est le joueur a qui appartient le bateau
+	 */
 	static void cuirassermouvement(cuirasse a, Joueur joueur)
 	{
 		boolean test = true;
@@ -175,7 +199,13 @@ public class mouvement {
 		}
 		 
 	}
-	
+	/**
+	 * classe qui permet de deplacer les croiseurs
+	 * @param a
+	 * represente le type bateau séléctionner
+	 * @param joueur 
+	 * est le joueur a qui appartient le bateau
+	 */
 	static void croiseurmouvement(croiseur a, Joueur joueur)
 	{
 		boolean test = true;
@@ -234,7 +264,19 @@ public class mouvement {
 	
 	
 //_____________________________________________________________________________________________________________________________________________________________
-	
+/**
+ * méthode permetant de teste si les nouvelles coordonné sont bien utilisables et place le bateau si oui sinon le remet a ses ancienne coordoné
+ * @param joueur
+ * le joueur
+ * @param a
+ * un sousmarin
+ * @param newcoord
+ * les nouvelles coordonnées
+ * @param tmpcoord
+ * les anciennes coordonées
+ * @return
+ * un booléen
+ */
 	static boolean actiondeplSmarin(Joueur joueur, sousmarin a, Point [] newcoord, Point [] tmpcoord) {
 		if (Testplacement.isPlacementok(newcoord, joueur.arraylist) == false )
 		{
@@ -259,7 +301,19 @@ public class mouvement {
 				return true;
 		
 	}
-	
+	/**
+	 * méthode permetant de teste si les nouvelles coordonné sont bien utilisables et place le bateau si oui sinon le remet a ses ancienne coordoné
+	 * @param joueur
+	 * le joueur
+	 * @param a
+	 * destroyer
+	 * @param newcoord
+	 * les nouvelles coordonnées
+	 * @param tmpcoord
+	 * les anciennes coordonées
+	 * @return
+	 * un booléen
+	 */
 	
 	
 	static boolean actiondepldestr(Joueur joueur, destroyer a, Point [] newcoord, Point [] tmpcoord) {
@@ -287,7 +341,19 @@ public class mouvement {
 	}
 	
 	
-	
+	/**
+	 * méthode permetant de teste si les nouvelles coordonné sont bien utilisables et place le bateau si oui sinon le remet a ses ancienne coordoné
+	 * @param joueur
+	 * le joueur
+	 * @param a
+	 * croiseur
+	 * @param newcoord
+	 * les nouvelles coordonnées
+	 * @param tmpcoord
+	 * les anciennes coordonées
+	 * @return
+	 * un booléen
+	 */
 
 
 static boolean actiondeplcroiseur(Joueur joueur, croiseur a, Point [] newcoord, Point [] tmpcoord) {
@@ -313,7 +379,19 @@ static boolean actiondeplcroiseur(Joueur joueur, croiseur a, Point [] newcoord, 
 			return true;
 	
 }
-
+/**
+ * méthode permetant de teste si les nouvelles coordonné sont bien utilisables et place le bateau si oui sinon le remet a ses ancienne coordoné
+ * @param joueur
+ * le joueur
+ * @param a
+ * un cuirassé
+ * @param newcoord
+ * les nouvelles coordonnées
+ * @param tmpcoord
+ * les anciennes coordonées
+ * @return
+ * un booléen
+ */
 static boolean actiondeplCuirrasse(Joueur joueur, cuirasse a, Point [] newcoord, Point [] tmpcoord) {
 	if (Testplacement.isPlacementok(newcoord, joueur.arraylist) == false )
 	{

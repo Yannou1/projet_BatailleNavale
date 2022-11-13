@@ -2,9 +2,19 @@ package modele;
 
 import java.awt.Point;
 import java.util.ArrayList;
-
+/**
+ * Fait les test pour savoir un placement est valide 
+ * @author Yanis
+ *
+ */
 public class Testplacement {
-	
+	/**
+	 * parcours la liste des bateaux pour savoir si un bateau est positioner au même endroit que celui qui va être posé
+	 * @param Mesbateaux
+	 * liste de toutes les coordonées des différents bateaux
+	 * @return
+	 * un boléen
+	 */
 	public static boolean boathere( ArrayList<Point[]> Mesbateaux ) 
 	{
 		
@@ -44,7 +54,13 @@ public class Testplacement {
 
 
 
-
+ /**
+  * permet de savoir si un bateau et dans la grille 
+  * @param monbateau
+  * coordonées du bateau en cours de placement 
+  * @return
+  * un booléens
+  */
 	public static boolean coordValide(Point[] monbateau) 
 	{
 		boolean value = false;
@@ -74,7 +90,15 @@ public class Testplacement {
 			}
 	return value;
 	}
-	
+	/**
+	 * verifie si les deux methodé précedente valide le placement du bateau 
+	 * @param bat
+	 * coordonées du bateau en cours de placement 
+	 * @param bateauxjoueur
+	 * liste de toutes les coordonées des différents bateaux
+	 * @return
+	 * un booléen
+	 */
 	public static boolean isPlacementok(Point[] bat, ArrayList<Point[]> bateauxjoueur )
 	{
 		

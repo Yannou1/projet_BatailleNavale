@@ -2,8 +2,12 @@ package vue;
 
 import java.awt.Point;
 
-import controleur.Joueur;
-
+import modele.Joueur;
+/**
+ * créé une grille 
+ * @author Yanis
+ *
+ */
 public class grille {
 	String c = "";
 	private  String [] [] grille;
@@ -22,7 +26,13 @@ public class grille {
 		}
 	} 
 
-
+/**
+ * place un bateau dans la grille
+ * @param BatCoord
+ * coordonée du bateau placer
+ * @param name
+ * nom du bateau placé
+ */
 public void placement (Point[] BatCoord, String name) {
 	for (Point i : BatCoord) {
 		if ( i != null)
@@ -38,7 +48,9 @@ public void placement (Point[] BatCoord, String name) {
 }
 
 
-
+/**
+ * affiche la grille
+ */
 public void affiche() {
 	
 	System.out.println();

@@ -1,10 +1,14 @@
 package controleur;
 
 
+import modele.Joueur;
 import modele.quigagne;
-import vue.grille;
 
-
+/**
+ * permet d'initailiser une nouvelle partie
+ * @author Yanis
+ *
+ */
 public class Nvlpartie {
 	
 	
@@ -26,10 +30,8 @@ Placegrille.PLaceGrille(joueur1);
 Placegrille.PLaceGrille(joueur2);
 	while (quigagne.score(joueur2)  <2)
 	{
-
 	ChoseBoat.choseBoat(joueur1, joueur2);
 	ChoseBoat.choseBoat(joueur2, joueur1);
-	//System.out.println(joueur1.getDestroyerList().get(0).getvie());
 	System.out.println("J2 G1");
 	joueur2.g1.affiche();
 	System.out.println("J1 G2");

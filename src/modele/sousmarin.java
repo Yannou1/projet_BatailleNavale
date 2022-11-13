@@ -2,7 +2,11 @@ package modele;
 
 import java.awt.Point;
 import java.util.Scanner;
-
+/**
+ * sousmarin
+ * @author Yanis
+ *
+ */
 public class sousmarin extends Bateau{
 
 	public int sense;
@@ -12,7 +16,11 @@ public class sousmarin extends Bateau{
 	public int nbattaque =0;
 	public Point[] attaque;
 	private final static int taille = 1;
-
+	/**
+	 * construit un sousmarin
+	 * @param name
+	 * nom du cuirassé ( so + nombre)
+	 */
 	public sousmarin(String name) {
 		super(name, taille);
 		this.coord = new Point [1];

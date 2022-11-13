@@ -1,15 +1,15 @@
-package controleur;
+package modele;
 
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import modele.croiseur;
-import modele.cuirasse;
-import modele.destroyer;
-import modele.sousmarin;
 import vue.grille;
-
+/**
+ * initialise un joueur avec tous ses attribut
+ * @author Yanis
+ * 
+ */
 public class Joueur {
 	public ArrayList<Point[]> arraylist;
 	public  HashMap<String, Object> Boats;
@@ -21,8 +21,12 @@ public class Joueur {
 	 public grille g2;
 	 
 	
-
-Joueur(String name) {
+/**
+ * construit le joueur
+ * @param name
+ * nom du joueur 
+ */
+public Joueur(String name) {
 	 g1 = new grille();
 	 g2 = new grille();
 	 arraylist = new ArrayList<Point []>();

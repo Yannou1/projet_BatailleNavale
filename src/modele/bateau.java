@@ -2,7 +2,11 @@ package modele;
 
 import java.awt.Point;
 import java.util.Scanner;
-
+/**
+ * classe mére abstraite dont tout les bateau hérite
+ * @author Yanis
+ *
+ */
 public abstract class Bateau {
 	protected  int vie;
 	private final int taille;
@@ -13,11 +17,20 @@ public abstract class Bateau {
 	final static int HAUT = 3; 
 	final static int BAS = 4;
 	Point p1;
-	
+	/**
+	 * constucteur de bateau 
+	 * @param name
+	 * nom du bateau
+	 * @param taille
+	 * taille du bateau
+	 */
 	Bateau(String name, int taille)
 	{
 		this.name = name;
 		this.taille = taille;
+		/**
+		 * dans la bataille navale la vie du bateau équivaut à ça longeur 
+		 */
 		this.vie=taille;
 	}
 	
@@ -45,13 +58,27 @@ public abstract class Bateau {
 		return p1;
 		
 	}
+	/**
+	 * méthode abstraite permettant de connaitre la vie du bateau
+	 * @param attaque
+	 * nombre de dégat subit
+	 * @return
+	 */
+	abstract int VieBateau(int attaque);
 	
-	abstract int VieBateau(int tt);
+	/**
+	 * permettant de connaitre la zone qui est touché lors d'un tire de bateau
+	 */
 	public abstract void Puissancetire() ;
 	
 
 	
-	
+	/**
+	 * demande le sens du bateau souhaité
+	 *
+	 * @return
+	 * le sens choisit
+	 */
 	protected static int sens()
 	{
 		sens = 0;
@@ -89,7 +116,11 @@ public abstract class Bateau {
 		 
 	}
 	
-	
+	/**
+	 * calcul le premier point de chaque bateau en fonction des points X et Y rentré
+	 * @return
+	 * retourne un point 
+	 */
 	 Point firstpoint() {
 		
 		int X = 0;

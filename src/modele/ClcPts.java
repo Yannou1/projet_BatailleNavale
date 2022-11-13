@@ -1,7 +1,11 @@
 package modele;
 
 import java.awt.Point;
-
+/**
+ * calcul tous les point d'un bateau 
+ * @author Yanis
+ *
+ */
 public class ClcPts {
 	
 	static int  sense =Bateau.sens();
@@ -12,7 +16,17 @@ public class ClcPts {
 	public static Point[] coord;
 	static int coordX = 0;
 	static int  coordY= 0;
-	
+	/**
+	 * calcul des point 
+	 * @param sens
+	 * sens du bateau
+	 * @param p1
+	 * premier point 
+	 * @param taille
+	 * longeur du bateau
+	 * @return
+	 * un tableau avec tous les points du bateau
+	 */
 	public static Point[] coordpts(int sens, Point p1, int taille )
 	{
 		coordX = (int) p1.getX();

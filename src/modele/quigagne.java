@@ -1,8 +1,17 @@
 package modele;
-
-import controleur.Joueur;
-
+/**
+ * permet de savoir qui gagne
+ * @author Yanis
+ *
+ */
 public class quigagne {
+	/**
+	 * calcul le score de chaque joueur 
+	 * @param joueur
+	 * le joueur choisit
+	 * @return
+	 * le score du joueur 
+	 */
 	public static int score(Joueur joueur)
 	{
 		int monscore =0;

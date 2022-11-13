@@ -2,7 +2,11 @@ package modele;
 
 import java.awt.Point;
 import java.util.Scanner;
-
+/**
+ * cuirassé
+ * @author Yanis
+ *
+ */
 public class cuirasse extends Bateau {
 	public int sense;
 	public int coordX;
@@ -12,7 +16,11 @@ public class cuirasse extends Bateau {
 	public Point[] attaque;
 	private final static int taille = 7;
 	destroyer destroyer ;
-	
+	/**
+	 * construit un cuirasée
+	 * @param name
+	 * nom du cuirassé ( cu + nombre)
+	 */
 	public cuirasse(String name) {
 		super(name, taille);
 		this.coord = new Point [taille];

@@ -2,7 +2,11 @@ package modele;
 
 import java.awt.Point;
 import java.util.Scanner;
-
+/**
+ * destroyer
+ * @author Yanis
+ *
+ */
 public class destroyer extends Bateau 
 {
 	
@@ -14,7 +18,11 @@ public class destroyer extends Bateau
 	public Point[] attaque;
 	private final static int taille = 3;
 	destroyer destroyer ;
-	
+	/**
+	 * construit un cuirasée
+	 * @param name
+	 * nom du destroyer ( de + nombre)
+	 */
 public destroyer (String name) 
 {
 	

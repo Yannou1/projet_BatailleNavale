@@ -3,13 +3,24 @@ package controleur;
 
 
 import java.util.Scanner;
+
+import modele.Joueur;
 import modele.Testplacement;
 import modele.croiseur;
 import modele.cuirasse;
 import modele.destroyer;
 import modele.sousmarin;
-
+/**
+ * Permet de placer un bateau sur la grille 
+ * @author Yanis
+ *
+ */
 public class Placegrille {
+	/**
+	 * place le bateau hoisit par l'imput du scanner au coordoné souhaiter et verifie qu'il n'y pas de bateau deja placé ou que les coordoné sont dans la grille 
+	 * @param joueur
+	 * le joueur qui est entrain de jouer
+	 */
 	public static void PLaceGrille(Joueur joueur)
 	{	
 		final int nbBateau =1;
@@ -37,7 +48,7 @@ public class Placegrille {
 		int choix = sc.nextInt();
 		if (choix <0) System.out.println("non-valide");
 		String destroyername = "de" + Integer.toString(joueur.getDestroyerList().size()+1);
-		String Smarinname = "so" + Integer.toString(joueur.SmarinList.size()+1);
+		String Smarinname = "so" + Integer.toString(joueur.getSmarinList().size()+1);
 		String croiseurname = "cr" + Integer.toString(joueur.getCroiseurList().size()+1);
 		String cuirassename = "cu" + Integer.toString(joueur.getCuirasseList().size()+1);
 		
@@ -77,24 +88,24 @@ public class Placegrille {
 		case 2 :
 			if (Smarinpose <= nbSmarin)
 			{
-				joueur.SmarinList.add(new sousmarin(Smarinname));	
-				joueur.ajouter(joueur.SmarinList.get(Smarinpose).coord);
-				for ( sousmarin i : joueur.SmarinList )
+				joueur.getSmarinList().add(new sousmarin(Smarinname));	
+				joueur.ajouter(joueur.getSmarinList().get(Smarinpose).coord);
+				for ( sousmarin i : joueur.getSmarinList() )
 				{
 					while (true) {
-						if (Testplacement.isPlacementok(joueur.SmarinList.get(Smarinpose).coord, joueur.arraylist) ==false)
+						if (Testplacement.isPlacementok(joueur.getSmarinList().get(Smarinpose).coord, joueur.arraylist) ==false)
 						{
-							joueur.g1.placement(joueur.SmarinList.get(Smarinpose).coord,joueur.SmarinList.get(Smarinpose).getName());
+							joueur.g1.placement(joueur.getSmarinList().get(Smarinpose).coord,joueur.getSmarinList().get(Smarinpose).getName());
 							joueur.g1.affiche();
-							joueur.Boats.put(joueur.SmarinList.get(Smarinpose).getName(),joueur.SmarinList.get(Smarinpose) );
+							joueur.Boats.put(joueur.getSmarinList().get(Smarinpose).getName(),joueur.getSmarinList().get(Smarinpose) );
 							bateaupose ++;
 							Smarinpose++;
 							break;
 						}
 						else {
 							System.out.println("coordoné non valide pour " +Smarinname +" nouvel coordonées :" );
-							joueur.SmarinList.set(Smarinpose, new sousmarin(Smarinname));
-							joueur.set(bateaupose,joueur.SmarinList.get(Smarinpose).coord);
+							joueur.getSmarinList().set(Smarinpose, new sousmarin(Smarinname));
+							joueur.set(bateaupose,joueur.getSmarinList().get(Smarinpose).coord);
 						}
 						
 					}

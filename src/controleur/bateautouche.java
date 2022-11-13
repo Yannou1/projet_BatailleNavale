@@ -3,14 +3,30 @@ package controleur;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import modele.Joueur;
 import vue.grille;
 
-
+/**
+ * permet de faire les test a la suite d'un tire pour savoir si un bateau est touché
+ * @author Yanis
+ * 
+ */
 public class bateautouche {
  static Point [] toucher ;
  static int CoordX =0;
  static int CoordY =0;
  static ArrayList<String> BatKey;
+ 	/**
+ 	 * verifie si un bateau est touché
+ 	 * @param attaque
+ 	 * coordonées des point d'impact d'une attaque
+ 	 * @param tousBat
+ 	 * liste des coordonné de tout les points de chaque bateau
+ 	 * @param taille
+ 	 * taille du bateau
+ 	 * @return
+ 	 * un tableau avec tout les points ou un bateau est touché
+ 	 */
 	 static Point[] isboathit(Point[] attaque,ArrayList<Point[]> tousBat, int taille )
 	{ 
 	toucher = new Point[20];
@@ -37,7 +53,15 @@ public class bateautouche {
 				}
 		return toucher;
 	}
-	
+	/**
+	 * permet de connaitre le nom des bateaux touchées 
+	 * @param att
+	 * point retourné de la méthode isboathit
+	 * @param joueur
+	 * joueur a qui appartient lagrille
+	 * @return
+	 * retourne un tableau aavec tous les noms des bateau touché
+	 */
 	   static ArrayList<String> whichboat(Point [] att, Joueur joueur) {
 		BatKey = new ArrayList<String>();
 		int indice2 =0;
@@ -56,11 +80,7 @@ public class bateautouche {
 	}
 	return BatKey;  
 	}
-	static void TestBateau() {
-		
-		
-	}
-	
+
 	
 	
 
