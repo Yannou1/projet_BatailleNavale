@@ -12,7 +12,9 @@ public class grille {
 	String c = "";
 	private  String [] [] grille;
 	
-	
+	/**
+	 * constructeur de la grille 
+	 */
 	public grille()
 	{
 		grille = new String [15] [15];
