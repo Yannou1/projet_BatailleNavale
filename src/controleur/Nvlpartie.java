@@ -13,8 +13,8 @@ public class Nvlpartie {
 	
 	public static void partie() {
 
-	Joueur joueur1 = new Joueur("test");
-	Joueur joueur2 = new Joueur("test1");
+	Joueur joueur1 = new Joueur("joueur1");
+	Joueur joueur2 = new Joueur("joueur 2");// IA non iimplementer seulement jcj
 	
 	
 	
