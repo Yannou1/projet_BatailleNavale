@@ -23,10 +23,10 @@ public class Placegrille {
 	 */
 	public static void PLaceGrille(Joueur joueur)
 	{	
-		final int nbBateau =1;
-		final int nbSmarin =1;
+		final int nbBateau =10;
+		final int nbSmarin =4;
 		final int nbDest =3;
-		final int nbcroiseur =1;
+		final int nbcroiseur =2;
 		final int nbcuirasse =1;
 		int destpose =0;
 		int Smarinpose =0;
@@ -39,6 +39,7 @@ public class Placegrille {
 	while( bateaupose < nbBateau )
 	{
 		Scanner sc = new Scanner(System.in);
+		System.out.println(joueur.getName() +" placez votre bateau" );
 		System.out.println("taper (1) destroyer ");
 		System.out.println("taper (2) sous-marin");
 		System.out.println("taper (3) croiseur");
@@ -56,7 +57,7 @@ public class Placegrille {
 		{
 		
 		case 1:
-			if (destpose <= nbDest)
+			if (destpose < nbDest)
 			{
 				joueur.getDestroyerList().add(new destroyer(destroyername));
 				joueur.ajouter(joueur.getDestroyerList().get(destpose).coord);
@@ -86,7 +87,7 @@ public class Placegrille {
 				break; 
 				
 		case 2 :
-			if (Smarinpose <= nbSmarin)
+			if (Smarinpose < nbSmarin)
 			{
 				joueur.getSmarinList().add(new sousmarin(Smarinname));	
 				joueur.ajouter(joueur.getSmarinList().get(Smarinpose).coord);
@@ -111,11 +112,14 @@ public class Placegrille {
 					}
 					break;
 				}
-		}		
+		}
+			else 
+				System.out.println("tout les sousmarins sont positionés");
+				
 		break; 
 		
 		case 3 :
-			if (croiseurpose <= nbcroiseur)
+			if (croiseurpose < nbcroiseur)
 			{
 				joueur.getCroiseurList().add(new croiseur(croiseurname));	
 				joueur.ajouter(joueur.getCroiseurList().get(croiseurpose).coord);
@@ -141,10 +145,12 @@ public class Placegrille {
 					break;
 				}
 		}		
-		break; 			
+			else 
+				System.out.println("tout les croiseurs sont positionés");
+					break; 		
 			
 		case 4 : 
-			if (cuirasseposee <= nbcuirasse)
+			if (cuirasseposee < nbcuirasse)
 			{
 				joueur.getCuirasseList().add(new cuirasse(cuirassename));	
 				joueur.ajouter(joueur.getCuirasseList().get(cuirasseposee).coord);
@@ -170,7 +176,9 @@ public class Placegrille {
 					break;
 				}
 		}		
-		break; 			
+			else 
+				System.out.println("tout les cuirassés sont positionés");
+					break; 
 			
 }
 

@@ -21,6 +21,8 @@ public class ChoseBoat {
 	{
 		
 		Object choix = null;
+		System.out.println("votre grille : ");
+		joueur.g1.affiche();
 		while(joueur.Boats.get(choix) == null )
 		{
 			Scanner sc = new Scanner(System.in);

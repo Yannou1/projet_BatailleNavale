@@ -12,23 +12,23 @@ public class quigagne {
 	 * @return
 	 * le score du joueur 
 	 */
-	public static int score(Joueur joueur)
+	public static int score(Joueur joueur, Joueur joueur2)
 	{
 		int monscore =0;
 		for (destroyer a : joueur.getDestroyerList())
 			if (a.getvie() == 0)
 			{
-				monscore += 1;
+				monscore += joueur2.getscore(1) ;
 			}
 		for (sousmarin a : joueur.getSmarinList())
 			if (a.getvie() == 0)
 			{
-				monscore += 1;
+				monscore += joueur2.getscore(1);
 			}
 		for (croiseur a : joueur.getCroiseurList())
 			if (a.getvie() == 0)
 			{
-				monscore += 1;
+				monscore += joueur2.getscore(1);
 			}
 		return monscore;	
 	}

@@ -19,7 +19,8 @@ public class Joueur {
 	private ArrayList<cuirasse> cuirasseList;
 	 public grille g1;
 	 public grille g2;
-	 
+	 String name;
+	 int score;
 	
 /**
  * construit le joueur
@@ -27,6 +28,7 @@ public class Joueur {
  * nom du joueur 
  */
 public Joueur(String name) {
+	this.name = name;
 	 g1 = new grille();
 	 g2 = new grille();
 	 arraylist = new ArrayList<Point []>();
@@ -35,6 +37,7 @@ public Joueur(String name) {
 	 SmarinList = new ArrayList<sousmarin>() ; 
 	 croiseurList = new ArrayList<croiseur>() ;
 	 cuirasseList = new ArrayList<cuirasse>();
+	 this.score = getscore(0);
 }
 
 public void ajouter(Point[] new_object) 
@@ -62,6 +65,16 @@ public ArrayList<croiseur> getCroiseurList() {
 public ArrayList<cuirasse> getCuirasseList() {
 	return cuirasseList;
 }
+
+public String getName() {
+	return name;
+}
+
+public int getscore(int i) {
+	return score + i;
+	
+}
+
 
 }
 

@@ -11,36 +11,56 @@ import modele.quigagne;
  */
 public class Nvlpartie {
 	
+	public static void partie() {
+
+	Joueur joueur1 = new Joueur("test");
+	Joueur joueur2 = new Joueur("test1");
 	
-	//static destroyer destroyer3 = new destroyer("d3");
-	public static Joueur joueur1 = new Joueur("test");
-	public static Joueur joueur2 = new Joueur("test1");
 	
 	
+	Placegrille.PLaceGrille(joueur1);
+	Placegrille.PLaceGrille(joueur2);
+		while (quigagne.score(joueur2, joueur1)  <10 || quigagne.score(joueur1, joueur2) < 10)
+		{
+			System.out.println("Au tour du joueur 1 de jouer");
+			ChoseBoat.choseBoat(joueur1, joueur2);
+			System.out.println("J1 G2");
+			joueur1.g2.affiche();
+			System.out.println("J1 G1");
+			joueur1.g1.affiche();
+		
+		if (quigagne.score(joueur2, joueur1)  ==10) {
+			System.out.println("le joueur 1 a gagné");
+			break;
+		}
+		if (quigagne.score(joueur1, joueur2)  ==10) {
+			System.out.println("le joueur 2 a gagné");
+			break;
+		}
+			
+			System.out.println("Au tour du joueur 2 de jouer");
+			ChoseBoat.choseBoat(joueur2, joueur1);
+			System.out.println("J2 G1");
+			joueur2.g1.affiche();
+			System.out.println("J2 G2");
+			joueur2.g2.affiche();
+
+		
+		}
+		if (quigagne.score(joueur2, joueur1)  ==10) {
+			System.out.println("le joueur 1 a gagné");
+		}
+		if (quigagne.score(joueur1, joueur2)  ==10) {
+			System.out.println("le joueur 2 a gagné");
+		}
+		
+	
+	
+	
+	
+	}
 	// on place maintenant les obj crée
 
-	
-	
-	
-	
-
-
-public static void main(String[] args) {
-Placegrille.PLaceGrille(joueur1);
-Placegrille.PLaceGrille(joueur2);
-	while (quigagne.score(joueur2)  <2)
-	{
-	ChoseBoat.choseBoat(joueur1, joueur2);
-	ChoseBoat.choseBoat(joueur2, joueur1);
-	System.out.println("J2 G1");
-	joueur2.g1.affiche();
-	System.out.println("J1 G2");
-	joueur1.g2.affiche();
-	System.out.println("J1 G1");
-	joueur1.g1.affiche();
-	
-}
-}
 }
 
 
