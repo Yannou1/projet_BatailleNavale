@@ -35,7 +35,7 @@ public class menu {
 						+ "\r\n"
 						+ "Les bateaux doivent être positionnés de façon verticale ou horizontale sur une grille et jamais en diagonale. Ils doivent toujours être placés bien à l'intérieur du plateau, ne doivent pas se toucher ni se superposer.\r\n"
 						+ "\r\n"
-						+ "Ce jeu  consiste à faire couler tous les bateaux de l'adversaire. La bataille commence en plaçant tous les navires dans une grille secrète. Chacun à leur tour, les joueurs doivent trouver et couler les bateaux adverses en communiquant les coordonnées visées, composées d'une lettre puis d'un nombre. Il revient aux deux joueurs de décider qui va ouvrir les hostilités en premier."
+						+ "Ce jeu  consiste à faire couler tous les bateaux de l'adversaire. La bataille commence en plaçant tous les navires dans une grille secrète. Chacun à leur tour, les joueurs doivent trouver et couler les bateaux adverses en communiquant les coordonnées visées, composées d'une lettre puis d'un nombre. Il revient aux deux joueurs de décider qui va ouvrir les hostilités en premier." //selon la définition de Hasbro
 						+ "\r\n"
 						+ " la spécifité ici est que tant qu'un bateau n'est pas touché il est possible de le deplacé d'une case en avant ou en arriérre celon sont sens de positionnement initiale"
 						);
